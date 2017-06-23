@@ -1,0 +1,13 @@
+pane	1	1	:bash	1	:*	0	:/home/rodelrod	1	bash	:
+pane	2	1	:run	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	2	:manage	0	:-	0	:/home/rodelrod/code/tov	1	python	:python ./manage.py runserver
+pane	2	3	:edit	1	:*	0	:/home/rodelrod/code/tov	1	vim	:vim tov/landing/views.py
+pane	2	4	:settings	0	:	0	:/home/rodelrod/code/tov	1	vim	:vim config/
+pane	2	5	:virtualenv	0	:	0	:/home/rodelrod/.virtualenvs/tov	1	python3	:/home/rodelrod/.virtualenvs/tov/bin/python3 /home/rodelrod/.virtualenvs/tov/bin/ipython
+window	1	1	1	:*	ae5f,80x23,0,0,2
+window	2	1	0	:	b980,186x52,0,0,3
+window	2	2	0	:-	b981,186x52,0,0,4
+window	2	3	1	:*	b982,186x52,0,0,5
+window	2	4	0	:	b983,186x52,0,0,6
+window	2	5	0	:	b984,186x52,0,0,7
+state	2	

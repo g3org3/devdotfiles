@@ -1,0 +1,9 @@
+pane	0	1	:run	0	:-	0	:/home/rodelrod/code/1-wordpress/tov-v1	1	python	:/usr/bin/python /usr/local/bin/docker-compose up
+pane	0	2	:cf-edit	1	:*	0	:/home/rodelrod/code/1-wordpress/tov-v1/wp_html/wp-content/themes/adventure-tours-child/templates/tour	1	vim	:vim checkfront-booking.php
+pane	0	3	:ack	0	:	0	:/home/rodelrod/code/1-wordpress/tov-v1/wp_html	1	bash	:
+pane	0	4	:wc-view	0	:	0	:/home/rodelrod/code/1-wordpress/tov-v1/wp_html	1	vim	:vim wp-content/themes/adventure-tours/woocommerce/includes/WC_Tour_Integration_Helper_Admin.php
+window	0	1	0	:-	b97e,186x52,0,0,1
+window	0	2	1	:*	b97f,186x52,0,0,2
+window	0	3	0	:	c4a0,79x56,0,0,3
+window	0	4	0	:	bc41,193x53,0,0,4
+state	0	

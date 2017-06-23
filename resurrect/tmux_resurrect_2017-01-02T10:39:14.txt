@@ -1,0 +1,5 @@
+pane	0	1	:vim	0	:-	0	:/home/rodelrod/code/0-sandbox/vuejs	1	vim	:vim index.html
+pane	0	2	:bash	1	:*	0	:/home/rodelrod/code/0-sandbox/vuejs	1	bash	:
+window	0	1	0	:-	aa9d,71x41,0,0,0
+window	0	2	1	:*	aa9e,71x41,0,0,1
+state	0	

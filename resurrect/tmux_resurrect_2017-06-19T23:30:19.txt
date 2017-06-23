@@ -1,0 +1,19 @@
+pane	1	1	:bash	1	:*	0	:/home/rodelrod	1	bash	:
+pane	2	1	:run	0	:	0	:/home/rodelrod/code/tov	1	python	:python ./manage.py runserver
+pane	2	2	:manage	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	3	:edit	1	:*	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	4	:settings	0	:	0	:/home/rodelrod/code/tov	1	vim	:vim config/
+pane	2	5	:virtualenv	0	:	0	:/home/rodelrod/.virtualenvs/tov	1	python3	:/home/rodelrod/.virtualenvs/tov/bin/python3 /home/rodelrod/.virtualenvs/tov/bin/ipython
+pane	2	6	:git	0	:	0	:/home/rodelrod/code/tov	1	git	:git diff
+pane	2	7	:frontend	0	:-	0	:/home/rodelrod/code/tov/tov/landing	1	vimdiff	:vimdiff templates/landing/partners.html /home/rodelrod/code/landing/partners.html
+pane	2	9	:python	0	:	0	:/home/rodelrod/code/tov	1	python	:python ./manage.py shell
+window	1	1	1	:*	ae5f,80x23,0,0,2
+window	2	1	0	:	b500,143x42,0,0,3
+window	2	2	0	:	b501,143x42,0,0,4
+window	2	3	1	:*	b602,145x42,0,0,5
+window	2	4	0	:	b503,143x42,0,0,6
+window	2	5	0	:	b504,143x42,0,0,7
+window	2	6	0	:	5ab1,143x42,0,0,12
+window	2	7	0	:-	5b32,145x42,0,0,13
+window	2	9	0	:	5b34,145x42,0,0,15
+state	2	

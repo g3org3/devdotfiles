@@ -1,0 +1,11 @@
+pane	0	1	:run	0	:	0	:/home/rodelrod/code/1-wordpress/tov-v1	1	python	:/usr/bin/python /usr/local/bin/docker-compose up
+pane	0	2	:ack	0	:M	0	:/home/rodelrod/code/1-wordpress/tov-v1/wp_html/wp-content	1	bash	:
+pane	0	3	:bash	0	:	0	:/home/rodelrod/code/1-wordpress/tov-v1/wp_html/wp-content/themes/adventure-tours	1	bash	:
+pane	0	4	:git	1	:*	0	:/home/rodelrod/code/1-wordpress/tov-v1/wp_html	1	bash	:
+pane	0	5	:bash	0	:-	0	:/home/rodelrod/code/1-wordpress	1	bash	:
+window	0	1	0	:	b2fd,181x70,0,0,0
+window	0	2	0	:M	b2fe,181x70,0,0,1
+window	0	3	0	:	b2ff,181x70,0,0,2
+window	0	4	1	:*	b980,186x52,0,0,3
+window	0	5	0	:-	b301,181x70,0,0,4
+state	0	

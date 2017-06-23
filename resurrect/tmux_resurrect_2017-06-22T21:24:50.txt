@@ -1,0 +1,29 @@
+pane	drf	1	:edit	0	:-	0	:/home/rodelrod/code/sandbox.dir/drf	1	vim	:vim snippets/models.py
+pane	drf	2	:run	0	:	0	:/home/rodelrod/code/sandbox.dir/drf	1	bash	:
+pane	drf	3	:python	1	:*	0	:/home/rodelrod/code/sandbox.dir/drf	1	bash	:
+pane	drf	4	:manage	0	:	0	:/home/rodelrod/code/sandbox.dir/drf	1	bash	:
+pane	drf	5	:vim	0	:	0	:/home/rodelrod/.vim	1	vim	:vim vimrc
+pane	drf	6	:python	0	:	0	:/home/rodelrod/code/sandbox.dir/drf	1	bash	:
+pane	tov	1	:run	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	tov	2	:manage	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	tov	3	:edit	0	:	0	:/home/rodelrod/code/tov/.ebextensions	1	vim	:vim django.config
+pane	tov	4	:settings	0	:	0	:/home/rodelrod/code/tov	1	vim	:vim config/
+pane	tov	5	:eb	1	:*	0	:/home/rodelrod/code/tov	1	bash	:
+pane	tov	6	:git	0	:-	0	:/home/rodelrod/code/tov	1	bash	:
+pane	tov	7	:vimdiff	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	tov	9	:shell	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+window	drf	1	0	:-	5ab0,143x42,0,0,11
+window	drf	2	0	:	5ab1,143x42,0,0,12
+window	drf	3	1	:*	5ab2,143x42,0,0,13
+window	drf	4	0	:	5ab3,143x42,0,0,14
+window	drf	5	0	:	5ab4,143x42,0,0,15
+window	drf	6	0	:	5ab5,143x42,0,0,16
+window	tov	1	0	:	b500,143x42,0,0,3
+window	tov	2	0	:	b501,143x42,0,0,4
+window	tov	3	0	:	bc42,117x34,0,0,5
+window	tov	4	0	:	b503,143x42,0,0,6
+window	tov	5	1	:*	bc44,117x34,0,0,7
+window	tov	6	0	:-	bc45,117x34,0,0,8
+window	tov	7	0	:	b506,143x42,0,0,9
+window	tov	9	0	:	5aaf,143x42,0,0,10
+state	tov	

@@ -1,0 +1,5 @@
+pane	0	1	:edit	1	:*	0	:/home/rodelrod/code/tov-django/tov/booking	1	vim	:vim .
+pane	0	2	:python	0	:-	0	:/home/rodelrod/code/tov-django/tov	1	python	:python ./manage.py shell
+window	0	1	1	:*	b5fd,145x42,0,0,0
+window	0	2	0	:-	b5fe,145x42,0,0,1
+state	0	

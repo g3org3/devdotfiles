@@ -1,0 +1,21 @@
+pane	0	1	:bash	1	:*	0	:/home/rodelrod/code/tov	1	bash	:
+pane	1	1	:bash	1	:*	0	:/home/rodelrod	1	bash	:
+pane	2	1	:run	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	2	:manage	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	3	:edit	1	:*	0	:/home/rodelrod/code/tov/bin	1	vim	:vim test_webflow2django.py
+pane	2	4	:settings	0	:	0	:/home/rodelrod/code/tov	1	vim	:vim config/
+pane	2	5	:bash	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	6	:git	0	:-	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	7	:vimdiff	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	9	:shell	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+window	0	1	1	:*	b5fe,145x42,0,0,1
+window	1	1	1	:*	b5ff,145x42,0,0,2
+window	2	1	0	:	b600,145x42,0,0,3
+window	2	2	0	:	b601,145x42,0,0,4
+window	2	3	1	:*	b502,143x42,0,0,5
+window	2	4	0	:	b603,145x42,0,0,6
+window	2	5	0	:	b604,145x42,0,0,7
+window	2	6	0	:-	b605,145x42,0,0,8
+window	2	7	0	:	b606,145x42,0,0,9
+window	2	9	0	:	5b2f,145x42,0,0,10
+state	2	1

@@ -1,0 +1,33 @@
+pane	0	1	:bash	1	:*	0	:/home/rodelrod/code/tov	1	bash	:
+pane	1	1	:bash	1	:*	0	:/home/rodelrod	1	bash	:
+pane	2	1	:run	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	2	:manage	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	3	:edit	1	:*	0	:/home/rodelrod/code/tov/bin	1	vim	:vim test_webflow2django.py
+pane	2	4	:settings	0	:	0	:/home/rodelrod/code/tov	1	vim	:vim config/
+pane	2	5	:bash	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	6	:git	0	:-	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	7	:vimdiff	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	2	9	:shell	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	3	1	:edit	1	:*	0	:/home/rodelrod/code/sandbox.dir/drf	1	vim	:vim snippets/models.py
+pane	3	2	:run	0	:	0	:/home/rodelrod/code/sandbox.dir/drf	1	python	:python ./manage.py runserver
+pane	3	3	:vim	0	:	0	:/home/rodelrod/.virtualenvs/drf/bin	1	vim	:vim postactivate
+pane	3	4	:manage	0	:-	0	:/home/rodelrod/code/sandbox.dir/drf	1	bash	:
+pane	3	5	:vim	0	:	0	:/home/rodelrod/.vim	1	vim	:vim vimrc
+pane	3	6	:python	0	:	0	:/home/rodelrod/code/sandbox.dir/drf	1	python	:/usr/bin/python /usr/bin/ipython
+window	0	1	1	:*	b4fe,143x42,0,0,1
+window	1	1	1	:*	b4ff,143x42,0,0,2
+window	2	1	0	:	b500,143x42,0,0,3
+window	2	2	0	:	b501,143x42,0,0,4
+window	2	3	1	:*	b502,143x42,0,0,5
+window	2	4	0	:	b503,143x42,0,0,6
+window	2	5	0	:	b504,143x42,0,0,7
+window	2	6	0	:-	b505,143x42,0,0,8
+window	2	7	0	:	b506,143x42,0,0,9
+window	2	9	0	:	5aaf,143x42,0,0,10
+window	3	1	1	:*	5b30,145x42,0,0,11
+window	3	2	0	:	5b31,145x42,0,0,12
+window	3	3	0	:	5b32,145x42,0,0,13
+window	3	4	0	:-	5b33,145x42,0,0,14
+window	3	5	0	:	5b34,145x42,0,0,15
+window	3	6	0	:	5b36,145x42,0,0,17
+state	3	2

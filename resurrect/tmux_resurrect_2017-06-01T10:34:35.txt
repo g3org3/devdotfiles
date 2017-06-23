@@ -1,0 +1,21 @@
+pane	tov-landing	1	:vim	0	:	0	:/home/rodelrod/code/tov	1	vim	:vim config/settings.py
+pane	tov-landing	2	:run	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	tov-landing	3	:manage	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	tov-landing	4	:psql	0	:	0	:/home	1	bash	:
+pane	tov-landing	5	:git	0	:-	0	:/home/rodelrod/code/tov	1	bash	:
+pane	tov-landing	6	:shell	0	:	0	:/home/rodelrod/code/tov	1	bash	:
+pane	tov-landing	7	:tov-landing	1	:*	0	:/home/rodelrod/.virtualenvs/tov/lib/python3.5/site-packages/allauth/socialaccount	1	vim	:vim helpers.py
+pane	tov-landing	10	:vim	0	:	0	:/home/rodelrod/.virtualenvs/tov/lib/python3.5/site-packages/django/template	1	vim	:vim base.py
+pane	tov-wp	1	:run	0	:-	0	:/home/rodelrod/code/tov-wp	1	python	:/usr/bin/python /usr/local/bin/docker-compose up
+pane	tov-wp	2	:git	1	:*	0	:/home/rodelrod/code/tov-wp/wp_html	1	bash	:
+window	tov-landing	1	0	:	cfde,212x68,0,0,1
+window	tov-landing	2	0	:	cfdf,212x68,0,0,2
+window	tov-landing	3	0	:	cfe0,212x68,0,0,3
+window	tov-landing	4	0	:	cfe1,212x68,0,0,4
+window	tov-landing	5	0	:-	cfe2,212x68,0,0,5
+window	tov-landing	6	0	:	cfe3,212x68,0,0,6
+window	tov-landing	7	1	:*	cfe4,212x68,0,0,7
+window	tov-landing	10	0	:	cfe5,212x68,0,0,8
+window	tov-wp	1	0	:-	e820,212x68,0,0,21
+window	tov-wp	2	1	:*	e821,212x68,0,0,22
+state	tov-wp	tov-landing

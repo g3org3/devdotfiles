@@ -1,0 +1,23 @@
+pane	0	1	:runserver	0	:	0	:/home/rodelrod/code/tov-django/tov	1	bash	:
+pane	0	2	:secrets	0	:	0	:/home/rodelrod/.virtualenvs/tov-django	1	vim	:vim secrets.ini
+pane	0	3	:postgres	0	:	0	:/home/rodelrod/code/tov-django	1	psql	:sudo su postgres
+pane	0	4	:manage	0	:	0	:/home/rodelrod/code/tov-django/tov	1	bash	:
+pane	0	5	:psql	0	:	0	:/home/rodelrod/code/tov-django	1	psql	:/usr/lib/postgresql/9.5/bin/psql -h localhost -U tov_sync -W tov
+pane	0	6	:git	0	:	0	:/home/rodelrod/code/tov-django	1	bash	:
+pane	0	7	:readme	0	:	0	:/home/rodelrod/code/tov-django	1	vim	:vim README.rst
+pane	0	8	:python3	0	:	0	:/home/rodelrod/code/tov-django	1	python3	:/home/rodelrod/.virtualenvs/tov-django/bin/python3 /home/rodelrod/.virtualenvs/tov-django/bin/ipython
+pane	0	9	:edit-tov	0	:	0	:/home/rodelrod/code/tov-django/tov	1	vim	:vim .
+pane	0	10	:bash	0	:-	0	:/home/rodelrod/code/tov-django	1	bash	:sudo su postgres
+pane	0	11	:bash	1	:*	0	:/home/rodelrod/code/tov-django	1	bash	:
+window	0	1	0	:	cf3d,111x68,0,0,0
+window	0	2	0	:	cf3f,111x68,0,0,2
+window	0	3	0	:	cf40,111x68,0,0,3
+window	0	4	0	:	cf42,111x68,0,0,5
+window	0	5	0	:	67d5,111x68,0,0,16
+window	0	6	0	:	67d3,111x68,0,0,14
+window	0	7	0	:	cf46,111x68,0,0,9
+window	0	8	0	:	67d1,111x68,0,0,12
+window	0	9	0	:	67d2,111x68,0,0,13
+window	0	10	0	:-	67d6,111x68,0,0,17
+window	0	11	1	:*	67d7,111x68,0,0,18
+state	0	
