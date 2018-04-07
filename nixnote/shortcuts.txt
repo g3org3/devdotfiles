@@ -109,7 +109,7 @@ Edit_Copy_Note_Url	   Ctrl+Shift+K			// Copy the current note URL to the clipboa
 // Format_Underline		Ctrl+U		// Underline
 // Format_Italic			Ctrl+I		// Italic
 // Format_Strikethrough		Ctrl+-		// Strikethrough
-// Format_Horizontal_Line				// Href line
+Format_Horizontal_Line	  Ctrl+Shift+-			// Href line
 // Format_Superscript		Ctrl+=		// Set superscript
 // Format_Subscript		Ctrl+Shift+=	// Subscript
 // Format_Alignment_Left		Ctrl+L		// Left align text
@@ -118,8 +118,8 @@ Edit_Copy_Note_Url	   Ctrl+Shift+K			// Copy the current note URL to the clipboa
 // Format_Alignment_Right		Ctrl+R		// Right align text
 // Format_List_Bullet		Ctrl+Shift+B	// Bullet list
 // Format_List_Numbered		Ctrl+Shift+N	// Numbered list 
-// Format_Indent_Increase		Ctrl+M		// Increase the indentation
-// Format_Indent_Decrease		Ctrl+Shift+M	// Decrease the indent
+Format_Indent_Increase		Ctrl+Shift+.		// Increase the indentation
+Format_Indent_Decrease		Ctrl+Shift+,	// Decrease the indent
 // Format_Highlight                                // Highlight the current text
 Format_Code_Block        Ctrl+Shift+L                       // Format code block
 // 
@@ -145,6 +145,6 @@ Format_Code_Block        Ctrl+Shift+L                       // Format code block
 // Focus_Url					// Focus on the source URL field
 // Focus_Search					// Focus on the search field
 // Focus_Notebook				        // Focus on the notebook
-// Focus_Font			Ctrl+D      // Focus on the font drop down :: RR: does not work
+Focus_Font			Ctrl+D      // Focus on the font drop down
 // Focus_Font_Size					// Focus on the font size drop down
 // 
