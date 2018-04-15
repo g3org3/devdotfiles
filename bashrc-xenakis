@@ -125,6 +125,9 @@ fi
 # bit bewildering).
 stty -ixon
 
+# Alias to edit really big files
+alias vimlight="vim --noplugin -c 'syntax off'"
+
 # virtualenv
 export PROJECT_HOME=/home/rodelrod/code
 export WORKON_HOME=$HOME/.virtualenvs
