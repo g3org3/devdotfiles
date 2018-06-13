@@ -130,6 +130,7 @@ export DROPBOX=/media/rodelrod/Celeiro/Dropbox
 export ORG=/media/rodelrod/Celeiro/Dropbox/Databases/Org    # Org-mode home
 alias dusage="du -h --max-depth=1"                            # One-level disk usage
 alias vimlight="vim --noplugin -c 'syntax off'"             # For gigantic files like SQL dumps
+function prettyjson() { cat "$1" | python -m json.tool; }
 
 # virtualenv
 export PROJECT_HOME=/home/rodelrod/code
