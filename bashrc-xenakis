@@ -156,6 +156,9 @@ export PATH="$PATH:./node_modules/.bin" # look for locally installed binaries
 # search for snap executables
 export PATH="/snap/bin:$PATH"
 
+# rustup
+export PATH="$HOME/.cargo/bin:$PATH"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/rodelrod/.sdkman"
 [[ -s "/home/rodelrod/.sdkman/bin/sdkman-init.sh" ]] && source "/home/rodelrod/.sdkman/bin/sdkman-init.sh"
