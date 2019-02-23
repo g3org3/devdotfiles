@@ -1,0 +1,10 @@
+Installation
+============
+
+ln -s the following:
+
+- vim-config → ~/.vim
+- vim-config/.vimrc → ~/.vimrc
+- idea/ideavimrc → ~/.ideavimrc
+
+TODO: tmux, bashrc, keylayout, scripts
