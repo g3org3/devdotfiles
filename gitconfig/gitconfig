@@ -13,3 +13,4 @@
     lol = log --graph --decorate --oneline
     lola = log --graph --decorate --oneline --all
     st = status -sb
+    cm = commit -m
