@@ -14,3 +14,4 @@
     lola = log --graph --decorate --oneline --all
     st = status -sb
     cm = commit -m
+    co = checkout
