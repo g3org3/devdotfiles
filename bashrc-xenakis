@@ -126,8 +126,8 @@ fi
 stty -ixon
 
 # Rod's shortcuts
-export DROPBOX=/media/rodelrod/Celeiro/Dropbox
-export ORG=/media/rodelrod/Celeiro/Dropbox/Databases/Org    # Org-mode home
+export DROPBOX=/data/Dropbox/Dropbox
+export ORG=${DROPBOX}/Databases/Org    # Org-mode home
 alias dusage="du -h --max-depth=1"                            # One-level disk usage
 alias vimlight="vim --noplugin -c 'syntax off'"             # For gigantic files like SQL dumps
 alias magit='emacsclient -nw -e "(progn (magit-status) (delete-other-windows))"'
