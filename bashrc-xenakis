@@ -125,6 +125,9 @@ fi
 # bit bewildering).
 stty -ixon
 
+# Wrap aliases that that they can stil use completion
+source ~/linuxconf/bashrc/complete-alias/bash_completion.sh
+
 # Rod's shortcuts
 export DROPBOX=/data/Dropbox/Dropbox
 export ORG=${DROPBOX}/Databases/Org    # Org-mode home
