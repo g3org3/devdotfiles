@@ -133,6 +133,7 @@ export DROPBOX=/data/Dropbox/Dropbox
 export ORG=${DROPBOX}/Databases/Org    # Org-mode home
 alias ta="tmux attach-session -t"
 complete -F _complete_alias ta         # wrap alias to preserve completion
+alias dc="docker-compose"              # not worth wrapping, no completion in the original command
 alias dusage="du -h --max-depth=1"                            # One-level disk usage
 alias vimlight="vim --noplugin -c 'syntax off'"             # For gigantic files like SQL dumps
 alias magit='emacsclient -nw -e "(progn (magit-status) (delete-other-windows))"'
