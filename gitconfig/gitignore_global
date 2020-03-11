@@ -3,3 +3,4 @@ __pycache__
 *.swo
 .idea/
 *.iml
+TAGS
