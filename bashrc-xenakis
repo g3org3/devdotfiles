@@ -142,6 +142,7 @@ function prettyjson() { cat "$1" | python -m json.tool; }
 # virtualenv
 export PROJECT_HOME=/home/rodelrod/code
 export WORKON_HOME=$HOME/.virtualenvs
+# the following 2 lines are probably not necessary with pyenv-virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3  # points to system python even inside tmux
 source /usr/local/bin/virtualenvwrapper.sh
 
