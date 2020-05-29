@@ -8,6 +8,7 @@
 
 ```bash
 cd  ~/.dotfiles
+stow stow    # do this first!
 stow bashrc
 stow vim-config
 ```

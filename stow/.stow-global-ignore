@@ -1,0 +1,36 @@
+# Comments and blank lines are allowed.
+
+RCS
+.+,v
+
+CVS
+\.\#.+       # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
+
+\.git
+\.gitignore
+\.gitmodules
+
+# Emacs
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
+
+# Vim
+# swap
+.*\.sw[a-p]
+# session
+Session.vim
+# temporary
+\.netrwhist
+# auto-generated tag files
+tags
+
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+
