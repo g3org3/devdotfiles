@@ -18,11 +18,10 @@ sudo stow -t /usr/share/X11/xkb keylayout
 cd keylayout && sudo ./setup
 stow idea
 stow gitconfig
+stow nixnote
 ```
 
 
 # :warning: TODO
 
 - scripts
-- git
-- nixnote
