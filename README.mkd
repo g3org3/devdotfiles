@@ -13,9 +13,7 @@ stow vim-config
 ```
 
 
-:warning: TODO
+# :warning: TODO
 
-- vim-config → ~/.vim
-- vim-config/.vimrc → ~/.vimrc
 - idea/ideavimrc → ~/.ideavimrc
 - tmux, keylayout, scripts
