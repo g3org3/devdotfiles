@@ -16,10 +16,12 @@ stow bashrc
 stow vim-config
 sudo stow -t /usr/share/X11/xkb keylayout
 cd keylayout && sudo ./setup
+stow idea
 ```
 
 
 # :warning: TODO
 
-- idea/ideavimrc → ~/.ideavimrc
-- tmux, scripts
+- scripts
+- git
+- nixnote
