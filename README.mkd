@@ -1,0 +1,14 @@
+# Installation
+
+## Picking the host
+
+The `.bashrc` file is a soft link to one of the host-specific configurations. 
+
+The current link points at my current machine, but that can be changed easily.
+
+```bash
+ln -s .bashrc.d/bashrc-{hostname} .bashrc
+```
+
+## Use GNU stow...
+...to create the symlinks to `$HOME`
