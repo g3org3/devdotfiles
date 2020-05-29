@@ -1,10 +1,21 @@
-Installation
-============
+# Installation
 
-ln -s the following:
+## Git clone into `~/.dotfiles`
+
+## Get the submodules (tmux, bashrc, etc.)
+
+## Use `GNU Stow` to create the necessary symlinks.
+
+```bash
+cd  ~/.dotfiles
+stow bashrc
+stow vim-config
+```
+
+
+:warning: TODO
 
 - vim-config → ~/.vim
 - vim-config/.vimrc → ~/.vimrc
 - idea/ideavimrc → ~/.ideavimrc
-
-TODO: tmux, bashrc, keylayout, scripts
+- tmux, keylayout, scripts
