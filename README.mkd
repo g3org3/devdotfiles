@@ -14,10 +14,12 @@ cd  ~/.dotfiles
 stow stow    # do this first!
 stow bashrc
 stow vim-config
+sudo stow -t /usr/share/X11/xkb keylayout
+cd keylayout && sudo ./setup
 ```
 
 
 # :warning: TODO
 
 - idea/ideavimrc → ~/.ideavimrc
-- tmux, keylayout, scripts
+- tmux, scripts

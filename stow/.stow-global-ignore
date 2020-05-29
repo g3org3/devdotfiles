@@ -1,16 +1,11 @@
 # Comments and blank lines are allowed.
 
-RCS
-.+,v
 
-CVS
-\.\#.+       # CVS conflict files / emacs lock files
-\.cvsignore
+# Setup scripts
+^/stow_setup
+^setup
 
-\.svn
-_darcs
-\.hg
-
+# Git
 \.git
 \.gitignore
 \.gitmodules
@@ -20,13 +15,9 @@ _darcs
 \#.*\#       # emacs autosave files
 
 # Vim
-# swap
 .*\.sw[a-p]
-# session
 Session.vim
-# temporary
 \.netrwhist
-# auto-generated tag files
 tags
 
 ^/README.*
