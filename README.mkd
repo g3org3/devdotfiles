@@ -21,7 +21,6 @@ stow gitconfig
 stow nixnote
 ```
 
+## Kernel module signing UEFI shenanigans
 
-# :warning: TODO
-
-- scripts
+I gave up on this for Xenakis, but the script is available on `scripts/update_kernel_modules.sh`
