@@ -4,6 +4,9 @@
 
 ## Get the submodules (tmux, bashrc, etc.)
 
+1. `git submodule init {PACKAGE}`
+2. `git submodule update --merge`
+
 ## Use `GNU Stow` to create the necessary symlinks.
 
 ```bash
