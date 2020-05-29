@@ -126,7 +126,7 @@ fi
 stty -ixon
 
 # Wrap aliases that that they can stil use completion
-source ~/linuxconf/bashrc/complete-alias/bash_completion.sh
+source ~/.bashrc.d/complete-alias/complete_alias
 
 # Rod's shortcuts
 export DROPBOX=/data/Dropbox/Dropbox
