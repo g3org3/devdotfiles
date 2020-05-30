@@ -19,6 +19,7 @@ cd keylayout && sudo ./setup
 stow idea
 stow gitconfig
 stow nixnote
+stow rofi
 ```
 
 ## Kernel module signing UEFI shenanigans
