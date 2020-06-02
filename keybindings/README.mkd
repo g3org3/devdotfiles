@@ -1,0 +1,10 @@
+Gnome/Unity custom key bindings
+===============================
+
+# Usage
+
+Use `./pull` to get the updated settings and `git diff` to check for changes.
+
+Use `./push` to initialize a new system, if you really have to.
+
+:warning: DO NOT EDIT `media-keys.dconf` file by hand: Unity will crash on minimal changes. Always use the graphical editor.

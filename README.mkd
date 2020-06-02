@@ -22,6 +22,12 @@ stow nixnote
 stow rofi
 ```
 
+## Check for changes in Gnome key bindings
+
+```
+cd keybindings && ./pull && git diff
+```
+
 ## Kernel module signing UEFI shenanigans
 
 I gave up on this for Xenakis, but the script is available on `scripts/update_kernel_modules.sh`
