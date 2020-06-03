@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=NixNote2 URL
+GenericName=Evernote-clone
+Exec=nixnote_url %u
+Icon=/usr/share/nixnote2/images/windowIcon.png
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/evernote
+NoDisplay=true
+

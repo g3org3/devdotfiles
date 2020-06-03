@@ -1,0 +1,9 @@
+#!/bin/bash
+cd /home/rodelrod/code/vendor.dir/nixnote2/target/appdir/
+if ! pgrep -x 'AppRun' >/dev/null
+then
+    ./AppRun & sleep 1
+fi
+./AppRun signalGui --openExternalNoteUrl --url="$1"
+
+

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Register nixnote as the Evernote handler in mimeapps.list
+MIMEAPPS_PATH=~/.local/share/applications/mimeapps.list
+HANDLER='x-scheme-handler/evernote'
+EXPRESSION='x-scheme-handler/evernote=nixnote_url.desktop'
+TEMPFILE=/tmp/evernote_handler
+case $(grep ${HANDLER} ${MIMEAPPS_PATH} >${TEMPFILE}; echo $?) in 
+    0)
+        # found
+        echo "Skipping: a handler for evernote was already installed in ${MIMEAPPS_PATH}: '$(cat ${TEMPFILE})'"
+        ;;
+    1)
+        # not found
+        echo "Installing nixnote_url as the evernote uri handler in ${MIMEAPPS_PATH}"
+        echo ${EXPRESSION} >> ${MIMEAPPS_PATH}
+        ;;
+    *)
+        # an error occurred
+        echo "Error installing nixnote_url as the evernote uri handler in ${MIMEAPPS_PATH}"
+        ;;
+esac
+rm -f ${TEMPFILE}

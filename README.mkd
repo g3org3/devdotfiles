@@ -19,6 +19,7 @@ cd keylayout && sudo ./setup
 stow idea
 stow gitconfig
 stow nixnote
+cd nixnote && ./setup && cd ..         # register evernote handler in mimeapps.list
 stow rofi
 ```
 
