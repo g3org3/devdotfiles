@@ -15,7 +15,7 @@ stow stow    # do this first!
 stow bashrc
 stow vim-config
 sudo stow -t /usr/share/X11/xkb keylayout
-cd keylayout && sudo ./setup
+cd keylayout && sudo ./setup && cd ..  # install layout in evdev.xml
 stow idea
 stow gitconfig
 stow nixnote
