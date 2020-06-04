@@ -13,6 +13,8 @@
 cd  ~/.dotfiles
 stow stow    # do this first!
 stow bashrc
+stow tmux
+tmux source-file ~/.tmux.conf          # registers systemd unit to launch tmux server on startup
 stow vim-config
 sudo stow -t /usr/share/X11/xkb keylayout
 cd keylayout && sudo ./setup && cd ..  # install layout in evdev.xml
