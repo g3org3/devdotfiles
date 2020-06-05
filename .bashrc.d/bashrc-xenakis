@@ -137,6 +137,7 @@ alias dc="docker-compose"              # not worth wrapping, no completion in th
 alias dusage="du -h --max-depth=1"                            # One-level disk usage
 alias vimlight="vim --noplugin -c 'syntax off'"             # For gigantic files like SQL dumps
 alias magit='emacsclient -nw -e "(progn (magit-status) (delete-other-windows))"'
+alias tstamp='date +%Y%m%dT%H%M%S%Z'   # use this to timestamp file names
 function prettyjson() { cat "$1" | python -m json.tool; }
 
 # virtualenv
