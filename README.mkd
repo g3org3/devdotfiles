@@ -27,6 +27,24 @@ cd org-protocol && ./setup && cd ..    # register org-protocol handler in mimeap
 stow rofi
 ```
 
+## Track Org files in git
+
+Create a separate git root to keep it out of Dropbox:
+
+
+```
+mkdir ~/.gitroots
+cd ~/org
+git init --separate-git-dir=~/.gitroots/org.git
+```
+
+Setup it up from the ~/.dotfiles directory with GNU stow:
+
+```
+stow org-commit
+cd org-commit && ./setup && cd ..      # add cron to commit org files every 15 minutes
+```
+
 ## Check for changes in Gnome key bindings
 
 ```

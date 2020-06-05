@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd "$HOME/org" || exit 1
+  
+# Make sure master branch is checked out
+if ! [[ $(git rev-parse --abbrev-ref HEAD) = "master" ]]
+then
+    echo "ERROR: master branch not checked out" >&2
+    exit 1
+fi
+
+# Only run add/commit if there is anything to add
+if [[ $(git status --porcelain) ]]
+then
+    git add --all . && git commit -a -m "auto from org-git-add-commit"
+fi
