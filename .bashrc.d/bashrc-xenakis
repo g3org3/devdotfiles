@@ -130,7 +130,7 @@ source ~/.bashrc.d/complete-alias/complete_alias
 
 # Rod's shortcuts
 export DROPBOX=/data/Dropbox/Dropbox
-export ORG=${DROPBOX}/Databases/Org    # Org-mode home
+export ORG=${DROPBOX}/Org    # Org-mode home
 alias ta="tmux attach-session -t"
 complete -F _complete_alias ta         # wrap alias to preserve completion
 alias dc="docker-compose"              # not worth wrapping, no completion in the original command
