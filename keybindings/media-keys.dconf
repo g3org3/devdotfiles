@@ -23,7 +23,7 @@ name='Insert Date'
 
 [custom-keybindings/custom3]
 binding='<Super>o'
-command="emacsclient -a '' --eval \"(org-agenda-show-n)\" \"(delete-other-windows)\" --create-frame"
+command="emacsclient -a '' --eval \"(+workspaces-delete-associated-workspace-h)\" \"(+workspace/switch-to-0)\" \"(select-frame-set-input-focus (selected-frame))\" --create-frame"
 name='Org-mode'
 
 [custom-keybindings/custom4]
