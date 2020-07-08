@@ -58,7 +58,7 @@ name='Firefox'
 
 [custom-keybindings/custom12]
 binding='<Super>i'
-command="emacsclient -a '' --eval \"(org-capture)\" \"(delete-other-windows)\" --create-frame"
+command='/home/rodelrod/emacs-profiles/doom-emacs/bin/org-capture'
 name='Org-capture'
 
 [custom-keybindings/custom8]
