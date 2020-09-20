@@ -1,6 +1,6 @@
 [/]
 area-screenshot=''
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/touchpad-indicator/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom12/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/touchpad-indicator/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom12/']
 www=''
 terminal='<Super>e'
 home='<Super>h'
@@ -23,7 +23,7 @@ name='Insert Date'
 
 [custom-keybindings/custom3]
 binding='<Super>o'
-command="emacsclient -a '' --eval \"(+workspaces-delete-associated-workspace-h)\" \"(+workspace/switch-to-0)\" \"(select-frame-set-input-focus (selected-frame))\" --create-frame"
+command='org-mode'
 name='Org-mode'
 
 [custom-keybindings/custom4]
@@ -45,11 +45,6 @@ name='Hamster'
 binding='<Super>y'
 command='google-chrome --profile-directory="Profile 1"'
 name='Chrome FFYN'
-
-[custom-keybindings/custom11]
-binding='<Super>m'
-command="emacsclient -a '' --eval \"(+workspaces-delete-associated-workspace-h)\" \"(+workspace/switch-to-0)\" \"(select-frame-set-input-focus (selected-frame))\" \"(org-roam-find-file)\" --create-frame"
-name='Org-roam'
 
 [custom-keybindings/custom7]
 binding='<Super>b'

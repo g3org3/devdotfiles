@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+emacsclient -a '' -c -e \
+    '(+workspaces-delete-associated-workspace-h)' \
+    '(select-frame-set-input-focus (selected-frame))'
+
