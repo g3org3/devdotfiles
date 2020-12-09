@@ -2,6 +2,12 @@
 
 ## Git clone into `~/.dotfiles`
 
+## Install dependencies
+
+```bash
+_setup/{OS}/apt
+```
+
 ## Get the submodules (tmux, bashrc, etc.)
 
 1. `git submodule init {PACKAGE}`

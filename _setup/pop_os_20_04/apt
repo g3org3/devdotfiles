@@ -1,0 +1,45 @@
+#!/bin/bash
+source ${BASH_SOURCE%/*}/_require_sudo.sh
+require_sudo
+
+apt install -y \
+	ack \
+	acpi-call-dkms \
+	filezilla \
+	flameshot \
+	fzf \
+	graphviz \
+	hexchat \
+	htop \
+	iftop \
+	inkscape \
+	indicator-multiload \
+	keepass2 \
+	meld \
+	mitmproxy \
+	nmap \
+	pandoc \
+	pdftk \
+	peek \
+	postgresql-client-common \
+	powertop \
+	python3-dev \
+	quiterss \
+	ripgrep \
+	seahorse \
+	stacer \
+	stow \
+	tlp \
+	tlp-rdw \
+	tmux \
+	tp-smapi-dkms \
+	traceroute \
+	ttf-mscorefonts-installer \
+	vim-gtk3 \
+	virtualbox \
+	webhttrack \
+	webp \
+	wireshark \
+	xclip \
+	xmlcopyeditor \
+	xmlstarlet
