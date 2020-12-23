@@ -1,14 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 source ${BASH_SOURCE%/*}/_require_sudo.sh
 require_sudo
 
 apt install -y \
 	ack \
 	acpi-call-dkms \
+    alacarte \
+    dbeaver-ce \
+    docker.io \
+    docker-compose \
+    exuberant-ctags \
 	filezilla \
 	flameshot \
+    fonts-open-sans \
+    fonts-powerline \
 	fzf \
 	graphviz \
+    guake \
 	hexchat \
 	htop \
 	iftop \
@@ -17,6 +25,7 @@ apt install -y \
 	keepass2 \
 	meld \
 	mitmproxy \
+    nautilus-admin \
 	nmap \
 	pandoc \
 	pdftk \
@@ -27,16 +36,20 @@ apt install -y \
 	quiterss \
 	ripgrep \
 	seahorse \
+    signal-desktop \
+    snapd \
+    sqlite3 \
+    sqlitebrowser \
 	stacer \
 	stow \
 	tlp \
 	tlp-rdw \
 	tmux \
-	tp-smapi-dkms \
 	traceroute \
 	ttf-mscorefonts-installer \
 	vim-gtk3 \
 	virtualbox \
+    virtualenvwrapper \
 	webhttrack \
 	webp \
 	wireshark \
