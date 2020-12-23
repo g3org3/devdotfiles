@@ -1,1 +1,1 @@
-.bashrc.d/bashrc-xenakis
+.bashrc.d/bashrc-xenakis-pop
