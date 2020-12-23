@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# To find a package attribute path:
+# :  nix-env -qaP <package>
+
+nix-env -iA \
+    nixpkgs.direnv \
+    nixpkgs.lorri \
+    nixpkgs.emacs

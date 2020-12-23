@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+install_sdkman() {
+	curl -s "https://get.sdkman.io" | bash
+}
+
+install_pyenv() {
+	sudo apt install -y \
+		build-essential libssl-dev zlib1g-dev \
+		libbz2-dev libreadline-dev libsqlite3-dev \
+		wget curl llvm libncurses5-dev libncursesw5-dev \ 
+		xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+	curl https://pyenv.run | bash
+}
+
+install_nix() {
+    # See documentation in https://nixos.org/manual/nix/stable/#chap-quick-start
+    sh <(curl -L https://nixos.org/nix/install) --daemon
+}
