@@ -7,6 +7,7 @@ apt install -y \
 	acpi-call-dkms \
     alacarte \
     dbeaver-ce \
+    dconf-editor \
     docker.io \
     docker-compose \
     exuberant-ctags \
