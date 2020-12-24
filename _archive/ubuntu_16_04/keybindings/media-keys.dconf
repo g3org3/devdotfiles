@@ -1,0 +1,82 @@
+[/]
+area-screenshot=''
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/touchpad-indicator/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom12/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom13/']
+www=''
+terminal='<Super>e'
+home='<Super>h'
+calculator='<Super>c'
+
+[custom-keybindings/custom0]
+binding='<Super>g'
+command='/usr/bin/gedit'
+name='Gedit'
+
+[custom-keybindings/custom1]
+binding='<Super>k'
+command='keepass2 "/home/rodelrod/Dropbox/Databases/KeePass/pessoais.kdbx"'
+name='Keepass'
+
+[custom-keybindings/custom2]
+binding='<Primary><Shift>d'
+command="bash -c 'sleep 0.3 && xdotool type \"$(date +%d/%m/%Y\\ %H:%M)\"'"
+name='Insert Date'
+
+[custom-keybindings/custom3]
+binding='<Super>o'
+command='org-mode'
+name='Org-mode'
+
+[custom-keybindings/custom4]
+binding='<Super>n'
+command='nixnote2 signalGui --newExternalNote'
+name='New Nixnote Note'
+
+[custom-keybindings/custom5]
+binding='<Super>r'
+command='rofi -show combi'
+name='Rofi Run'
+
+[custom-keybindings/custom10]
+binding='<Super>q'
+command='hamster-time-tracker'
+name='Hamster'
+
+[custom-keybindings/custom6]
+binding='<Super>y'
+command='google-chrome --profile-directory="Profile 1"'
+name='Chrome FFYN'
+
+[custom-keybindings/custom11]
+binding='<Super>semicolon'
+command='systemctl suspend'
+name='Suspend'
+
+[custom-keybindings/custom7]
+binding='<Super>b'
+command='firefox'
+name='Firefox'
+
+[custom-keybindings/custom12]
+binding='<Super>i'
+command='/home/rodelrod/emacs-profiles/doom-emacs/bin/org-capture'
+name='Org-capture'
+
+[custom-keybindings/custom8]
+binding='<Super>x'
+command='rofi -modi window,drun -show window -show-icons'
+name='Rofi Window'
+
+[custom-keybindings/custom13]
+binding='<Super>m'
+command='amixer set Capture toggle'
+name='Toggle Mic'
+
+[custom-keybindings/custom9]
+binding='<Shift>Print'
+command='flameshot gui'
+name='Flameshot'
+
+[custom-keybindings/touchpad-indicator]
+binding='<Control><Alt>z'
+command='/usr/bin/python3 /usr/share/touchpad-indicator/change_touchpad_state.py'
+name='Touchpad-Indicator'
