@@ -34,6 +34,12 @@ apt install -y \
 	powertop \
 	python3-dev \
 	quiterss \
+    recoll \
+        antiword \
+        python3-lxml \
+        python3-mutagen \
+        unrtf \
+        untex \
 	ripgrep \
 	seahorse \
     shellcheck \
