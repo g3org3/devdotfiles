@@ -36,6 +36,7 @@ apt install -y \
 	quiterss \
 	ripgrep \
 	seahorse \
+    shellcheck \
     signal-desktop \
     snapd \
     sqlite3 \
