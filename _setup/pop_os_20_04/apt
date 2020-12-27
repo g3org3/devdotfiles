@@ -4,7 +4,6 @@ require_sudo
 
 apt install -y \
 	ack \
-	acpi-call-dkms \
     alacarte \
     dbeaver-ce \
     dconf-editor \
@@ -44,7 +43,8 @@ apt install -y \
 	stacer \
 	stow \
 	tlp \
-	tlp-rdw \
+        tlp-rdw \
+        acpi-call-dkms \
 	tmux \
 	traceroute \
 	ttf-mscorefonts-installer \
