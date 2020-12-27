@@ -1,6 +1,6 @@
 [/]
 area-screenshot=@as []
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
 
 [custom-keybindings/custom0]
 binding='<Super>i'
@@ -21,3 +21,8 @@ name='Keepass'
 binding='<Shift>Print'
 command='flameshot gui'
 name='Flameshot'
+
+[custom-keybindings/custom4]
+binding='<Primary><Super>t'
+command='/home/rodelrod/bin/toggle-dark-theme'
+name='Toggle Dark/Light Theme'

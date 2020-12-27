@@ -44,6 +44,7 @@ stow nixnote
 cd nixnote && ./setup && cd ..         # register evernote handler in mimeapps.list
 stow org-protocol
 cd org-protocol && ./setup && cd ..    # register org-protocol handler in mimeapps.list
+stow pop-os
 ```
 
 ## Track Org files in git
