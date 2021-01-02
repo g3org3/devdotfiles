@@ -5,6 +5,7 @@ require_sudo
 apt install -y \
 	ack \
     alacarte \
+    awscli \
     dbeaver-ce \
     dconf-editor \
     docker.io \
@@ -41,6 +42,7 @@ apt install -y \
         unrtf \
         untex \
 	ripgrep \
+    s3fs \
 	seahorse \
     shellcheck \
     signal-desktop \
