@@ -1,4 +1,42 @@
-#!/usr/bin/env sh
-emacsclient -a '' -c -e \
-    '(select-frame-set-input-focus (selected-frame))'
+#!/usr/bin/env bash
+# if same frame option:
+usage() {
+    cat <<EOM
+Usage:  $(basename "$0") [OPTIONS]
+Launch emacs session for running server, or launch server if not already running.
 
+Options:
+    -d, --delete-workspace   Immediately delete the new workspace created by Doom Emacs
+    -h, --help               Print this message
+EOM
+    exit 1
+}
+for i in "$@"
+do
+    case $i in
+
+    -h|--help)
+        usage
+        exit 1
+        ;;
+    -d|--delete-workspace)
+        DELETE=true
+        shift
+        ;;
+    *)
+        usage
+        exit 1
+        ;;
+    esac
+done
+
+
+if [[ $DELETE == true ]]
+then
+    emacsclient -a '' -c -e \
+        '(+workspaces-delete-associated-workspace-h)' \
+        '(select-frame-set-input-focus (selected-frame))'
+else
+    emacsclient -a '' -c -e \
+        '(select-frame-set-input-focus (selected-frame))';
+fi
