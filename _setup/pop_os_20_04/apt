@@ -31,6 +31,7 @@ apt install -y \
 	pandoc \
 	pdftk \
 	peek \
+    plantuml \
 	postgresql-client-common \
 	powertop \
 	python3-dev \
