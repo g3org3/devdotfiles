@@ -11,12 +11,12 @@ case $(grep ${HANDLER} ${MIMEAPPS_PATH} >${TEMPFILE}; echo $?) in
         ;;
     1)
         # not found
-        echo "Installing nixnote_url as the org-protocol uri handler in ${MIMEAPPS_PATH}"
+        echo "Installing org-protocol.desktop as the org-protocol uri handler in ${MIMEAPPS_PATH}"
         echo ${EXPRESSION} >> ${MIMEAPPS_PATH}
         ;;
     *)
         # an error occurred
-        echo "Error installing nixnote_url as the org-protocol uri handler in ${MIMEAPPS_PATH}"
+        echo "Error installing org-protocol.desktop as the org-protocol uri handler in ${MIMEAPPS_PATH}"
         ;;
 esac
 rm -f ${TEMPFILE}
