@@ -32,6 +32,11 @@ binding='<Primary><Super>b'
 command='/usr/bin/google-chrome'
 name='Google Chrome'
 
+[custom-keybindings/custom6]
+binding='<Primary><Super>g'
+command='/usr/bin/gedit'
+name='Gedit'
+
 [custom-keybindings/custom7]
 binding='<Super>r'
 command='/home/rodelrod/bin/emacsc -d'
