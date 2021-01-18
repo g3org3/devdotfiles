@@ -41,3 +41,8 @@ name='Gedit'
 binding='<Super>r'
 command='/home/rodelrod/bin/emacsc -d'
 name='Emacs Client - existing workspace'
+
+[custom-keybindings/custom8]
+binding='<Primary><Super>i'
+command='/home/rodelrod/bin/org-agenda'
+name='Org Agenda'
