@@ -27,6 +27,11 @@ binding='<Primary><Super>t'
 command='/home/rodelrod/bin/toggle-dark-theme'
 name='Toggle Dark/Light Theme'
 
+[custom-keybindings/custom5]
+binding='<Primary><Super>b'
+command='/usr/bin/google-chrome'
+name='Google Chrome'
+
 [custom-keybindings/custom7]
 binding='<Super>r'
 command='/home/rodelrod/bin/emacsc -d'
