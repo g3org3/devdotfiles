@@ -1,6 +1,6 @@
 [/]
 area-screenshot=@as []
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/']
 
 [custom-keybindings/custom0]
 binding='<Super>i'
@@ -8,9 +8,9 @@ command='/home/rodelrod/emacs-profiles/doom-emacs/bin/org-capture'
 name='Org Capture'
 
 [custom-keybindings/custom1]
-binding='<Super>r'
+binding='<Primary><Super>r'
 command='/home/rodelrod/bin/emacsc'
-name='Emacs Client'
+name='Emacs Client - new workspace'
 
 [custom-keybindings/custom2]
 binding='<Super>x'
@@ -26,3 +26,8 @@ name='Flameshot'
 binding='<Primary><Super>t'
 command='/home/rodelrod/bin/toggle-dark-theme'
 name='Toggle Dark/Light Theme'
+
+[custom-keybindings/custom7]
+binding='<Super>r'
+command='/home/rodelrod/bin/emacsc -d'
+name='Emacs Client - existing workspace'
