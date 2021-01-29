@@ -12,6 +12,11 @@ binding='<Primary><Super>r'
 command='/home/rodelrod/bin/emacsc'
 name='Emacs Client - new workspace'
 
+[custom-keybindings/custom10]
+binding='<Primary><Super>e'
+command='google_meet_toggle --camera'
+name='Meet Toggle Camera'
+
 [custom-keybindings/custom2]
 binding='<Super>x'
 command='/usr/bin/keepass2'
@@ -46,3 +51,8 @@ name='Emacs Client - existing workspace'
 binding='<Primary><Super>i'
 command='/home/rodelrod/bin/org-agenda'
 name='Org Agenda'
+
+[custom-keybindings/custom9]
+binding='<Primary><Super>d'
+command='google_meet_toggle --mic'
+name='Meet Toggle Mic'

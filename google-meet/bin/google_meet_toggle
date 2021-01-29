@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+WINDOW_PATTERN="Meet –" 
+if [ "$1" = '--mic' ]
+then
+    COMMAND="Ctrl+d"
+elif [ "$1" = '--camera' ]
+then
+    COMMAND="Ctrl+e"
+else
+    echo "Usage: ${0} [--mic|--camera]"
+    exit 1
+fi
+xdotool search --name "${WINDOW_PATTERN}" windowactivate && xdotool key "${COMMAND}"

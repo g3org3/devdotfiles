@@ -65,5 +65,6 @@ apt install -y \
 	webp \
 	wireshark \
 	xclip \
+    xdotool \
 	xmlcopyeditor \
 	xmlstarlet
