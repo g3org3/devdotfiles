@@ -9,7 +9,6 @@ apt install -y \
     dbeaver-ce \
     dconf-editor \
     docker.io \
-    docker-compose \
     exuberant-ctags \
 	filezilla \
 	flameshot \
