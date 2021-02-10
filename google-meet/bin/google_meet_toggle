@@ -10,4 +10,4 @@ else
     echo "Usage: ${0} [--mic|--camera]"
     exit 1
 fi
-xdotool search --name "${WINDOW_PATTERN}" windowactivate && xdotool key "${COMMAND}"
+xdotool search --name "${WINDOW_PATTERN}" windowactivate && sleep 0.2 && xdotool key "${COMMAND}"
