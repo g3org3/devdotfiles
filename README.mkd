@@ -45,6 +45,9 @@ cd nixnote && ./setup && cd ..         # register evernote handler in mimeapps.l
 stow org-protocol
 cd org-protocol && ./setup && cd ..    # register org-protocol handler in mimeapps.list
 stow pop-os
+# Specific fixes for PopOS 20.04
+sudo pop-os-systemd
+sudo systemctl enable wifi-resume.service
 stow google-meet
 ```
 

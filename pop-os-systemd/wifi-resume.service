@@ -1,0 +1,15 @@
+#/etc/systemd/system/wifi-resume.service
+[Unit]
+Description=Restart wifi at resume
+After=suspend.target
+After=hibernate.target
+After=hybrid-sleep.target
+
+[Service]
+Type=oneshot
+ExecStart="/usr/bin/nmcli radio wifi off & /usr/bin/nmcli radio wifi on"
+
+[Install]
+WantedBy=suspend.target
+WantedBy=hibernate.target
+WantedBy=hybrid-sleep.target
