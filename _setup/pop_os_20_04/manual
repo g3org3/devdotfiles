@@ -29,3 +29,9 @@ install_nix() {
     # See documentation in https://nixos.org/manual/nix/stable/#chap-quick-start
     sh <(curl -L https://nixos.org/nix/install) --daemon
 }
+install_node() {
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+    source .bashrc
+    nvm install node
+}
+
