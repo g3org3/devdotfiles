@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# Manual install scripts for the setup of a new machine.
+#
+# These probably won't run by just sourcing and calling the functions. Next time
+# I'll fully automate it, if it makes sense. For now it's just a reference.
 
 install_sdkman() {
 	curl -s "https://get.sdkman.io" | bash
