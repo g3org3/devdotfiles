@@ -51,6 +51,10 @@ apt install -y \
     sqlitebrowser \
 	stacer \
 	stow \
+    texlive \
+        texlive-plain-generic \
+        texlive-science \
+        dvipng \
 	tlp \
         tlp-rdw \
         acpi-call-dkms \
