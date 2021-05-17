@@ -40,4 +40,9 @@ install_joplin() {
     wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 }
 
+install_poetry() {
+    pipx install poetry
+    poetry completions bash > ~/.local/share/bash-completion/completions/poetry.bash-completion
+}
+
 
