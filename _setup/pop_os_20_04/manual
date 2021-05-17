@@ -46,3 +46,13 @@ install_poetry() {
 }
 
 
+install_starship_prompt() {
+    # 1. Extract Ubuntu font from Nerdfonts into .local/share/fonts
+    # (actually I'm not sure if it's using these fonts and they're broken when
+    # I try to set them in a Gnome terminal profile.)
+    
+    # 2.  Install starship
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
+    # 3. Make sure that the eval is done in .bashrc
+}
