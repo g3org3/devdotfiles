@@ -1,1 +1,9 @@
-set surround
+set surround            " Use vim-surround (e.g. visual select + S)
+set multiple-cursors    " Use <A-n/p/x> to create multiple cursors. g<A-n> to ignore word boundaries
+set ideajoin            " Smarter line join via de IDE
+set ideamarks           " Sync vim marks with idea bookmarks
+set clipboard=unnamed   " Paste to main clipboard using vim yank
+set clipboard+=ideaput  " Smarter paste using IDE reformatting? Not sure that this is working.
+
+set incsearch
+set smartcase           " No ignorecase when pattern has uppercase
