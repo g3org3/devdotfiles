@@ -19,7 +19,7 @@ name='Meet Toggle Camera'
 
 [custom-keybindings/custom2]
 binding='<Super>x'
-command='/usr/bin/keepass2'
+command='/usr/bin/keepassxc'
 name='Keepass'
 
 [custom-keybindings/custom3]

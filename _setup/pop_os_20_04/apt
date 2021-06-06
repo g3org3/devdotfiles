@@ -22,7 +22,7 @@ apt install -y \
 	iftop \
 	inkscape \
 	indicator-multiload \
-	keepass2 \
+	keepassxc \
 	meld \
 	mitmproxy \
     nautilus-admin \
