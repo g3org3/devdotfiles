@@ -56,3 +56,8 @@ install_starship_prompt() {
 
     # 3. Make sure that the eval is done in .bashrc
 }
+
+config_ctags() {
+    # Universal Ctags is installed via apt but was getting overridden by a BSD version in the nix profile
+    ln -s /usr/bin/ctags-universal ~/bin/ctags
+}

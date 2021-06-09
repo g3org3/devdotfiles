@@ -9,7 +9,7 @@ apt install -y \
     dbeaver-ce \
     dconf-editor \
     docker.io \
-    exuberant-ctags \
+    universal-ctags \
 	filezilla \
 	flameshot \
     fonts-open-sans \
