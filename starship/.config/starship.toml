@@ -1,13 +1,15 @@
 # Inserts a blank line between shell prompts
 #add_newline = true
 
+# Disable the package module, hiding it from the prompt completely
+[package]
+#disabled = true
+
 [character]                            
 # characters to use: ❯ ❮ ➜ ▸ ▹ ✕ ➜ ⫶⬥ ⬦ ♦ ♢
 success_symbol = "[▸](bold green)" 
 error_symbol = "[▹](bold red)" 
 
-
-
-# Disable the package module, hiding it from the prompt completely
-[package]
-#disabled = true
+[directory]
+truncation_length = 20
+truncate_to_repo = true
