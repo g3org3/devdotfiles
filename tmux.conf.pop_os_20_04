@@ -42,14 +42,18 @@ bind-key C-l select-pane -R
 # swap panes
 bind-key J swap-pane -D
 bind-key K swap-pane -U
-
-# move pane to another window
 bind-key H join-pane -t :-
 bind-key L join-pane -t :+
+
 
 # allow repeating commands in window navigation
 bind-key -r n next-window
 bind-key -r p previous-window
+
+# move window left and right, allowing repeats
+bind-key -r P swap-window -t -1\; select-window -t -1
+bind-key -r N swap-window -t +1\; select-window -t +1
+
 
 # kill current pane/window
 #bind-key q confirm-before kill-pane
