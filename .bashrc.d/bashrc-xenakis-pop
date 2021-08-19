@@ -162,17 +162,18 @@ export PATH="$PATH:./node_modules/.bin" # look for locally installed binaries
 # search for snap executables
 export PATH="/snap/bin:$PATH"
 
-# rustup
-export PATH="$HOME/.cargo/bin:$PATH"
-
 # Easy access to Doom emacs cli tools
 export PATH="$PATH:$HOME/emacs-profiles/doom-emacs/bin"
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+source "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/rodelrod/.sdkman"
 [[ -s "/home/rodelrod/.sdkman/bin/sdkman-init.sh" ]] && source "/home/rodelrod/.sdkman/bin/sdkman-init.sh"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # direnv: must appear after rvm, git-prompt and other shell extensions that manipulate the prompt.
 eval "$(direnv hook bash)"
