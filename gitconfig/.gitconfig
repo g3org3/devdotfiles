@@ -15,3 +15,5 @@
     st = status -sb
     cm = commit -m
     co = checkout
+[github]
+	user = rodelrod
