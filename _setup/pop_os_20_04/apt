@@ -3,72 +3,72 @@ source ${BASH_SOURCE%/*}/_require_sudo.sh
 require_sudo
 
 apt install -y \
-	ack \
+    ack \
     alacarte \
     awscli \
     dbeaver-ce \
     dconf-editor \
     docker.io \
     universal-ctags \
-	filezilla \
-	flameshot \
+    filezilla \
+    flameshot \
     fonts-open-sans \
     fonts-powerline \
-	fzf \
-	graphviz \
+    fzf \
+    graphviz \
     guake \
-	hexchat \
-	htop \
-	iftop \
-	inkscape \
-	indicator-multiload \
-	keepassxc \
-	meld \
-	mitmproxy \
+    hexchat \
+    htop \
+    iftop \
+    inkscape \
+    indicator-multiload \
+    keepassxc \
+    meld \
+    mitmproxy \
     nautilus-admin \
-	nmap \
-	pandoc \
-	pdftk \
-	peek \
+    nmap \
+    pandoc \
+    pdftk \
+    peek \
     plantuml \
-	postgresql-client-common \
-	powertop \
-	python3-dev \
-	quiterss \
+    postgresql-client-common \
+    powertop \
+    python3-dev \
+    quiterss \
     recoll \
         antiword \
         python3-lxml \
         python3-mutagen \
         unrtf \
         untex \
-	ripgrep \
+    ripgrep \
     s3fs \
-	seahorse \
+    seahorse \
     shellcheck \
     signal-desktop \
     snapd \
     sqlite3 \
     sqlitebrowser \
-	stacer \
-	stow \
+    stacer \
+    stow \
     texlive \
         texlive-plain-generic \
         texlive-science \
         dvipng \
         texlive-latex-extras \
-	tlp \
+    tlp \
         tlp-rdw \
         acpi-call-dkms \
-	tmux \
-	traceroute \
-	ttf-mscorefonts-installer \
-	vim-gtk3 \
-	virtualbox \
+    tmux \
+    traceroute \
+    ttf-mscorefonts-installer \
+    vim-gtk3 \
+    virtualbox \
     virtualenvwrapper \
-	webhttrack \
-	webp \
-	wireshark \
-	xclip \
+    webhttrack \
+    webp \
+    wireshark \
+    xclip \
     xdotool \
-	xmlcopyeditor \
-	xmlstarlet
+    xmlcopyeditor \
+    xmlstarlet
