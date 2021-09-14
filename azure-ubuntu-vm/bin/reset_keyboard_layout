@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+# Crude hack to set the keyboard layout to the one defined in the remote Ubuntu
+# VDI.  Citrix likes to set the layout to the one chosen in the local Windows
+# host at the moment of connection. Ideally we'd run this just after starting a
+# Citrix connection but I don't know how to do that.
+
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'us_rod')]"
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us_rod'), ('xkb', 'us')]"
