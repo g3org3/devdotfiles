@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+flatpak install flathub \
+    com.github.tchx84.Flatseal \
+    io.dbeaver.DBeaverCommunity \
+    com.getpostman.Postman

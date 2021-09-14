@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+# Manual install scripts for the setup of a new machine.
+#
+# These probably won't run by just sourcing and calling the functions. Next time
+# I'll fully automate it, if it makes sense. For now it's just a reference.
+
+install_sdkman() {
+	curl -s "https://get.sdkman.io" | bash
+}
+
+install_pyenv() {
+	sudo apt install -y \
+		build-essential libssl-dev zlib1g-dev \
+		libbz2-dev libreadline-dev libsqlite3-dev \
+		wget curl llvm libncurses5-dev libncursesw5-dev \ 
+		xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+	curl https://pyenv.run | bash
+}
+
+install_pipx() {
+    pip install pipx
+}
+
+install_docker-compose() {
+    pipx install docker-compose
+}
+
+install_nix() {
+    # See documentation in https://nixos.org/manual/nix/stable/#chap-quick-start
+    sh <(curl -L https://nixos.org/nix/install) --daemon
+}
+install_node() {
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+    source .bashrc
+    nvm install node
+}
+
+install_joplin() {
+    # Install AppImage taking care of app logo
+    wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
+}
+
+install_poetry() {
+    pipx install poetry
+    poetry completions bash > ~/.local/share/bash-completion/completions/poetry.bash-completion
+}
+
+
+install_starship_prompt() {
+    # 1. Extract Ubuntu font from Nerdfonts into .local/share/fonts
+    # (actually I'm not sure if it's using these fonts and they're broken when
+    # I try to set them in a Gnome terminal profile.)
+    
+    # 2.  Install starship
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
+    # 3. Make sure that the eval is done in .bashrc
+}
+
+config_ctags() {
+    # Universal Ctags is installed via apt but was getting overridden by a BSD version in the nix profile
+    ln -s /usr/bin/ctags-universal ~/bin/ctags
+}

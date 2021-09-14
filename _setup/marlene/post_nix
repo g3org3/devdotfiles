@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+
+install_doom() {
+    mkdir -p ~/emacs-profiles
+    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/emacs-profiles/doom-emacs
+    ~/emacs-profiles/doom-emacs/bin/doom install
+    rm -rf ~/.doom.d    
+    git clone git@github.com:rodelrod/doom-emacs.git ~/.doom.d
+    ~/emacs-profiles/doom-emacs/bin/doom sync
+
+}
