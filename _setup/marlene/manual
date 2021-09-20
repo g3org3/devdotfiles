@@ -17,10 +17,6 @@ install_pyenv() {
 	curl https://pyenv.run | bash
 }
 
-install_pipx() {
-    pip install pipx
-}
-
 install_docker-compose() {
     pipx install docker-compose
 }
