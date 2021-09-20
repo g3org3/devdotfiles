@@ -55,7 +55,7 @@ apt install -y \
         texlive-plain-generic \
         texlive-science \
         dvipng \
-        texlive-latex-extras \
+        texlive-latex-extra \
     tlp \
         tlp-rdw \
         acpi-call-dkms \
