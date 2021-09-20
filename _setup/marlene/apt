@@ -3,15 +3,9 @@ source ${BASH_SOURCE%/*}/_require_sudo.sh
 require_sudo
 
 apt install -y \
-    ack \
-    alacarte \
-    awscli \
-    dbeaver-ce \
-    dconf-editor \
+    direnv \
     docker.io \
-    universal-ctags \
-    filezilla \
-    flameshot \
+    flatpak \
     fonts-open-sans \
     fonts-powerline \
     fzf \
@@ -20,55 +14,32 @@ apt install -y \
     hexchat \
     htop \
     iftop \
-    inkscape \
-    indicator-multiload \
-    keepassxc \
     meld \
-    mitmproxy \
     nautilus-admin \
-    nmap \
     pandoc \
     pdftk \
-    peek \
     plantuml \
     postgresql-client-common \
-    powertop \
     python3-dev \
-    quiterss \
-    recoll \
-        antiword \
-        python3-lxml \
-        python3-mutagen \
-        unrtf \
-        untex \
+    python3-venv \
+    pipx \
     ripgrep \
-    s3fs \
-    seahorse \
     shellcheck \
-    signal-desktop \
-    snapd \
     sqlite3 \
     sqlitebrowser \
-    stacer \
     stow \
     texlive \
         texlive-plain-generic \
         texlive-science \
         dvipng \
-        texlive-latex-extras \
-    tlp \
-        tlp-rdw \
-        acpi-call-dkms \
+        texlive-latex-extra \
     tmux \
     traceroute \
     ttf-mscorefonts-installer \
+    universal-ctags \
     vim-gtk3 \
-    virtualbox \
-    virtualenvwrapper \
-    webhttrack \
     webp \
     wireshark \
     xclip \
-    xdotool \
     xmlcopyeditor \
     xmlstarlet
