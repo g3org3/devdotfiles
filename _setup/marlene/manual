@@ -32,10 +32,6 @@ install_node() {
     nvm install node
 }
 
-install_joplin() {
-    # Install AppImage taking care of app logo
-    wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
-}
 
 install_poetry() {
     pipx install poetry
