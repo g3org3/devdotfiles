@@ -4,6 +4,5 @@
 # :  nix-env -qaP <package>
 
 nix-env -iA \
-    nixpkgs.direnv \
     nixpkgs.lorri \
     nixpkgs.emacs
