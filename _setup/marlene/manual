@@ -22,8 +22,9 @@ install_docker-compose() {
 }
 
 install_nix() {
+    # Single-user install (Multi-user failed for me in Citrix/Azure VDI)
     # See documentation in https://nixos.org/manual/nix/stable/#chap-quick-start
-    sh <(curl -L https://nixos.org/nix/install) --daemon
+    curl -L https://nixos.org/nix/install | sh -s
 }
 install_node() {
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
