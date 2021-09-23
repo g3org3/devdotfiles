@@ -1,6 +1,13 @@
 #!/bin/sh
-# Workaround: disable ibus in Emacs
+
+# HACK: disable ibus in Emacs
 # Reason: xkb dead keys do not work with ibus in Emacs
-# Versions: Emacs 27.1 from nixpakgs
+# Versions: Emacs 27.1+ from nixpakgs
 export XMODIFIERS=
-exec /home/rodelrod/.nix-profile/bin/emacs "$@"
+
+# HACK: pass --user with empty string
+# Reason: In the Azure Ubuntu VDI Emacs would complain about not finding the
+#         home directory. This hack should not be a problem in other
+#         environments, but it's still a hack.
+# Version: Citrix/Azure Ubuntu 20.04 VDI
+exec "${HOME}/.nix-profile/bin/emacs" --user "" "$@"
