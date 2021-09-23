@@ -26,6 +26,14 @@ install_nix() {
     # See documentation in https://nixos.org/manual/nix/stable/#chap-quick-start
     curl -L https://nixos.org/nix/install | sh -s
 }
+
+setup_nix_app_launchers() {
+    sed -i '/export XDG_DATA_DIRS.*nix*/d' ~/.profile
+    cat << "EOF" >> ~/.profile
+export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
+EOF
+}
+
 install_node() {
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
     source ~/.bashrc
