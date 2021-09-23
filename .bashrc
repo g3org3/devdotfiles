@@ -1,1 +1,1 @@
-.bashrc.d/bashrc-xenakis-pop
+.bashrc.d/bashrc-marlene
