@@ -5,4 +5,6 @@
 
 nix-env -iA \
     nixpkgs.lorri \
-    nixpkgs.emacs
+    nixpkgs.emacs \
+    nixpkgs.glibcLocales
+
