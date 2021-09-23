@@ -30,6 +30,7 @@ apt install -y \
     pandoc \
     pdftk \
     peek \
+    pinta \
     plantuml \
     postgresql-client-common \
     powertop \

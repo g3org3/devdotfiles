@@ -18,6 +18,7 @@ apt install -y \
     nautilus-admin \
     pandoc \
     pdftk \
+    pinta \
     plantuml \
     postgresql-client-common \
     python3-dev \
