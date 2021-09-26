@@ -17,3 +17,5 @@
     co = checkout
 [github]
 	user = rodelrod
+[includeIf "gitdir:~/code/dbg/"]
+    path = .gitconfig_dbg

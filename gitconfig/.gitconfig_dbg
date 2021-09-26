@@ -1,0 +1,5 @@
+[user]
+    name = Rodrigo Rodrigues
+    email = rodrigo.eliseu.rodrigues@eurex.com
+[http]
+    proxy = http//webproxy.deutsche-boerse.de:8080
