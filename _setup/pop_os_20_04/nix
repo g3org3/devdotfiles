@@ -6,4 +6,5 @@
 nix-env -iA \
     nixpkgs.direnv \
     nixpkgs.lorri \
-    nixpkgs.emacs
+    nixpkgs.emacs \
+    nixpkgs.hugo
