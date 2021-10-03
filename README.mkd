@@ -1,5 +1,12 @@
 # Installation
 
+
+## Install Ansible
+
+```sh
+sudo apt install ansible
+```
+
 ## Git clone into `~/.dotfiles`
 
 ## Install dependencies
