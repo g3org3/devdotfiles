@@ -115,26 +115,16 @@ set -g @continuum-boot 'on'
 # tmux version >= 2.5
 bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
-## Configure dracula theme
-set -g @dracula-show-battery false
-set -g @dracula-show-network false
-set -g @dracula-show-weather false
-set -g @dracula-show-time false
-set -g @dracula-show-location false
-# set -g @dracula-show-fahrenheit false
+## Configure dracula theme {
+# See options in https://draculatheme.com/tmux
+# available plugins: battery, cpu-usage, gpu-usage, ram-usage, network, network-bandwith, weather, time
+set -g @dracula-plugins "cpu-usage"  # setting it to empty, I see everything
 set -g @dracula-show-powerline true
-# set -g @dracula-show-left-sep
 set -g @dracula-show-flags true
-# set -g @dracula-refresh-rate 5 the default is 5, it can accept any number
-# set -g @dracula-military-time true
-# set -g @dracula-show-timezone false
 set -g @dracula-show-left-icon session  # it can accept session, smiley, window, or any character.
-# set -g @dracula-left-icon-padding default is 1, it can accept any number and 0 disables padding.
+# set -g @dracula-left-icon-padding  # default is 1, it can accept any number and 0 disables padding.
 # set -g @dracula-border-contrast true
-# set -g @dracula-cpu-usage true
-# set -g @dracula-ram-usage true
-# set -g @dracula-gpu-usage true
-# set -g @dracula-day-month true
+# }
 
 
 ## RER: install tmux-plugin-manager {
