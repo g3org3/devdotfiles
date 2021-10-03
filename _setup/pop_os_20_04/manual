@@ -29,10 +29,28 @@ install_nix() {
     # See documentation in https://nixos.org/manual/nix/stable/#chap-quick-start
     sh <(curl -L https://nixos.org/nix/install) --daemon
 }
+
+config_doom() {
+    # Generates file with current environment variables to inject into future
+    # Emacs sessions. Necessary for rust LSP.
+    doom env refresh
+}
+
 install_node() {
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
     source .bashrc
     nvm install node
+}
+
+install_rust() {
+    # Install Rust and rust-analyzer (for Emacs LSP)
+    # The version in apt is older, giving errors with Doom Emacs. I haven't tried nix.
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    source .bashrc
+    rustup component add rust-src
+    mkdir -p ~/.local/bin
+    curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux -o ~/.local/bin/rust-analyzer
+    chmod +x ~/.local/bin/rust-analyzer
 }
 
 install_joplin() {
