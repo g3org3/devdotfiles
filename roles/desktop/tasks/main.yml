@@ -44,3 +44,13 @@
     dir: roles/desktop/files
   with_items:
     - idea
+
+
+- name: Stow PopOS-specific files
+  stow:
+    state: present
+    package: '{{ item }}'
+    dir: roles/desktop/files
+  with_items:
+    - toggle-dark-theme
+  when: ansible_distribution == 'Pop!_OS'
