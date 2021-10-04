@@ -7,9 +7,6 @@
 [submodule "keylayout"]
 	path = keylayout
 	url = git@github.com:rodelrod/keylayout
-[submodule "tmux"]
-	path = tmux
-	url = git@github.com:rodelrod/tmux.git
 [submodule "chemacs"]
 	path = chemacs
 	url = https://github.com/plexus/chemacs.git
