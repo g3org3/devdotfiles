@@ -4,8 +4,8 @@
   debconf:
     name: ttf-mscorefonts-installer
     question: msttcorefonts/accepted-mscorefonts-eula
+    value: 'true'
     vtype: select
-    value: true
 
 
 - name: Install graphical desktop libraries using APT
