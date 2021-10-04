@@ -1,0 +1,37 @@
+---
+- name: Auto accept EULA for Microsoft fonts
+  become: true
+  debconf:
+    name: ttf-mscorefonts-installer
+    question: msttcorefonts/accepted-mscorefonts-eula
+    vtype: select
+    value: true
+
+
+- name: Install graphical desktop libraries using APT
+  become: true
+  apt: name={{ item }} state=latest
+  with_items:
+    - flatpak
+    - fonts-open-sans
+    - fonts-powerline
+    - graphviz
+    - guake
+    - hexchat
+    - meld
+    - nautilus-admin
+    - pinta
+    - plantuml
+    - sqlitebrowser
+    - texlive
+    - texlive-plain-generic
+    - texlive-science
+    - dvipng
+    - texlive-latex-extra
+    - ttf-mscorefonts-installer
+    - vim-gtk3
+    - webp
+    - wireshark
+    - xclip
+    - xmlcopyeditor
+    - xmlstarlet
