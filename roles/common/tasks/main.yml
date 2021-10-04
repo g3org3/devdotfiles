@@ -29,3 +29,5 @@
     dir: roles/common/files 
   with_items:
     - stow
+    - tmux
+    - gitconfig
