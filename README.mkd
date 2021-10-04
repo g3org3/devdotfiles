@@ -7,13 +7,24 @@
 sudo apt install ansible
 ```
 
-## Git clone into `~/.dotfiles`
+## Git clone into `~/.dotfiles` then
 
+```sh
+cd ~/.dotfiles
+sudo ls   # if in Azure Ubuntu VDI through Citrix
+make sync
+```
+
+
+
+
+# Old Installation
 ## Install dependencies
 
 ```bash
 _setup/{OS}/apt
 source _setup/{OS}/manual
+    
 # run the install functions in manual
 ```
 
