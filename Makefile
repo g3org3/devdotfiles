@@ -1,2 +1,2 @@
 sync:
-	ansible-playbook -i hosts site.yml
+	ansible-playbook site.yml
