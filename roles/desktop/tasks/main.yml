@@ -35,3 +35,12 @@
     - xclip
     - xmlcopyeditor
     - xmlstarlet
+
+
+- name: Stow configuration files
+  stow:
+    state: present
+    package: '{{ item }}'
+    dir: roles/desktop/files
+  with_items:
+    - idea
