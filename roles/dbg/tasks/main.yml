@@ -6,3 +6,4 @@
     dir: roles/dbg/files
   with_items:
     - maven
+    - mount-z-drive

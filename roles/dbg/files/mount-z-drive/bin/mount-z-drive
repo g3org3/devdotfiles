@@ -1,0 +1,7 @@
+#!/bin/bash
+# You could be tempted to put this in fstab. Don't, that would require to put
+# your password in a file somewhere and you know which password I'm talking
+# about, it's not one that you want to put in a file however protected!
+
+mkdir -p /mnt/z
+sudo mount -t cifs -o username=ht295,uid=16777216,gid=16777216,rw //emcuni-nfs-205.oa.pnrad.net/IFS_FS_RDEV /mnt/z
