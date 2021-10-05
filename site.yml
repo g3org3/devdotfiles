@@ -1,7 +1,14 @@
 ---
-- hosts: localhost
+- hosts: pcazrlu01134
   connection: local
   roles:
     - common
     - desktop
     - dbg
+    - azure-ubuntu-vdi
+
+- hosts: xenakis
+  connection: local
+  roles:
+    - common
+    - desktop
