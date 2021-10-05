@@ -1,5 +1,12 @@
-sync:
+.PHONY: install sync check
+
+hosts: hosts.template
+	bin/bootstrap
+
+install: hosts
+
+sync: install
 	ansible-playbook site.yml
 
-check:
+check: install
 	ansible-playbook --check site.yml

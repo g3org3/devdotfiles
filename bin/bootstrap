@@ -11,8 +11,17 @@ then
     echo "Something's off, this machine has no name! Aborting."
     exit 1
 else
-    echo "Generating hosts file."
+    echo "Generating ansible inventory file (hosts) with current machine name"
     sed "s/HOSTNAME/$(hostname)/" hosts.template > hosts
 fi
 
-
+# Install Ansible if not present
+if ! command -v ansible-playbook &> /dev/null
+then
+    if [[ $EUID != 0 ]]
+    then
+        sudo apt update && sudo apt install ansible
+    else
+        apt update && apt install ansible
+    fi
+fi
