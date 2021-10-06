@@ -1,17 +1,30 @@
 # Installation
 
-
-## Install Ansible
+1. Clone the repo
 
 ```sh
-sudo apt install ansible
+git clone --recurse-submodules git@github.com:rodelrod/dotfiles.git ~/.dotfiles
 ```
 
-## Git clone into `~/.dotfiles` then
+2. Make sure there's a playbook entry for the current hostname and add it if necessary
+
+```sh
+vim ~/.dotfiles/site.yml
+```
+
+3. Install bootstrap dependencies and setup environment
 
 ```sh
 cd ~/.dotfiles
-sudo ls   # if in Azure Ubuntu VDI through Citrix
+sudo ls    # just to make sure the sudo password is cached
+make install
+```
+
+
+# Running the Ansible playbook and synchronizing changes
+
+```sh
+sudo ls    # just to make sure the sudo password is cached
 make sync
 ```
 
@@ -27,6 +40,7 @@ source _setup/{OS}/manual
     
 # run the install functions in manual
 ```
+
 
 ### After installing nix
 
