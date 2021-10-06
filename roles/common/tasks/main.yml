@@ -33,3 +33,13 @@
     - gitconfig
     - bashrc
     - vim
+
+- name: Install Vundle
+  git:
+    repo: git@github.com:VundleVim/Vundle.vim.git
+    dest: ~/.vim/bundle/Vundle.vim
+
+- name: Install Vim plugins
+  shell: vim -E -s -c "source ~/.vimrc" -c PluginInstall -c qa
+  register: result
+  failed_when: ( result.rc not in [0,1] )   # it returns a 1 even when successful
