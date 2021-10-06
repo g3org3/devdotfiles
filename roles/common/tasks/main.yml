@@ -19,6 +19,7 @@
     - sqlite3
     - stow
     - tmux
+    - tree
     - traceroute
     - universal-ctags
 
