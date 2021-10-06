@@ -172,7 +172,7 @@ def stow(module, package, state):
     elif state == 'latest':
         flag = '--restow'
 
-    cmd = 'stow {0} {1} --target={2} --dir={3} --verbose --no-folding'.format(
+    cmd = 'stow {0} {1} --target={2} --dir={3} --verbose'.format(
         flag, package, params['target'], params['dir']
     )
 
