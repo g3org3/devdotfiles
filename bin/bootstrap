@@ -20,8 +20,12 @@ if ! command -v ansible-playbook &> /dev/null
 then
     if [[ $EUID != 0 ]]
     then
-        sudo apt update && sudo apt install ansible
+        sudo apt update && sudo apt install \
+            ansible \
+            python-apt
     else
-        apt update && apt install ansible
+        apt update && apt install \
+            ansible \
+            python-apt
     fi
 fi
