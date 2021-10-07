@@ -20,15 +20,20 @@ sudo ls    # just to make sure the sudo password is cached
 make install
 ```
 
-
-# Running the Ansible playbook and synchronizing changes
+4. Run the Ansible playbook to synchronize changes
 
 ```sh
 sudo ls    # just to make sure the sudo password is cached
 make sync
 ```
 
+5. Run Jetbrains Toolbox for the first time and install IntelliJ IDEA
 
+```sh
+/opt/jetbrains-toolbox-1.21.9712/jetbrains-toolbox
+```
+
+After the first run the Jetbrains Toolbox desktop link will be registered.
 
 
 # Old Installation
