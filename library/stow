@@ -171,9 +171,10 @@ def stow(module, package, state):
 
     elif state == 'latest':
         flag = '--restow'
+    no_folding = '' if not params['no-folding'] else ' --no-folding'
 
-    cmd = 'stow {0} {1} --target={2} --dir={3} --verbose'.format(
-        flag, package, params['target'], params['dir']
+    cmd = 'stow {0} {1} --target={2} --dir={3} --verbose{4}'.format(
+        flag, package, params['target'], params['dir'], no_folding
     )
 
     conflict = stow_has_conflicts(module, package, cmd)
@@ -213,6 +214,7 @@ def main():
             'dir': {'required': True, 'type': 'str'},
             'package': {'required': True, 'type': 'list'},
             'target': {'required': False, 'type': 'str', 'default': os.environ.get('HOME')},
+            'no-folding': {'required': False, 'type': 'bool', 'default': False},
             'state': {
                 'required': True,
                 'type': 'str',
