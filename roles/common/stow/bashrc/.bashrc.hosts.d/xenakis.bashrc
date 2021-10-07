@@ -25,9 +25,6 @@ source "$HOME/.cargo/env"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Starship Prompt (requires nerd fonts installed)
-eval "$(starship init bash)"
-
 # direnv: must appear after rvm, git-prompt and other shell extensions that manipulate the prompt.
 eval "$(direnv hook bash)"
 

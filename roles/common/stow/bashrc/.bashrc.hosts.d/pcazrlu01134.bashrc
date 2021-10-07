@@ -20,6 +20,9 @@ eval "$(direnv hook bash)"
 # added by pipx (https://github.com/pipxproject/pipx)
 export PATH="/home/OAAD/ht295/.local/bin:$PATH"
 
+# /usr/local/bin is not in PATH in Marlene, we need it for starship
+export PATH="$PATH:/usr/local/bin"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

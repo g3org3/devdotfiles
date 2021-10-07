@@ -4,6 +4,7 @@
   roles:
     - common
     - keylayout
+    - starship
     - desktop
     - emacs
     - jetbrains
@@ -15,6 +16,7 @@
   roles:
     - common
     - keylayout
+    - starship
     - desktop
     - emacs
     - jetbrains
