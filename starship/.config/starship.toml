@@ -12,4 +12,4 @@ error_symbol = "[▹](bold red)"
 
 [directory]
 truncation_length = 20
-truncate_to_repo = true
+truncate_to_repo = false
