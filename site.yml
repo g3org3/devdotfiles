@@ -4,6 +4,7 @@
   roles:
     - common
     - desktop
+    - emacs
     - dbg
     - azure-ubuntu-vdi
 
@@ -12,3 +13,4 @@
   roles:
     - common
     - desktop
+    - emacs

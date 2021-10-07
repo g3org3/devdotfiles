@@ -1,0 +1,10 @@
+---
+- name: Git clone chemacs
+  git:
+    repo: 'git@github.com:plexus/chemacs.git'
+    dest: "{{ ansible_env.HOME }}/chemacs"
+    update: yes
+
+
+- name: Install chemacs
+  shell: "{{ ansible_env.HOME }}/chemacs/install.sh"
