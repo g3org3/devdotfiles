@@ -41,7 +41,7 @@
   stow:
     state: present
     package: '{{ item }}'
-    dir: roles/desktop/files
+    dir: roles/desktop/stow
   with_items:
     - idea
 
@@ -50,7 +50,7 @@
   stow:
     state: present
     package: '{{ item }}'
-    dir: roles/desktop/files
+    dir: roles/desktop/stow
   with_items:
     - toggle-dark-theme
   when: ansible_distribution == 'Pop!_OS'

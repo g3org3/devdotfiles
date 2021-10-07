@@ -1,5 +1,5 @@
 [submodule "vim-config"]
-	path = roles/common/files/vim
+	path = roles/common/stow/vim
 	url = git@github.com:rodelrod/vim-config.git
 [submodule "keylayout"]
 	path = keylayout

@@ -3,6 +3,6 @@
   stow:
     state: present
     package: '{{ item }}'
-    dir: roles/azure-ubuntu-vdi/files
+    dir: roles/azure-ubuntu-vdi/stow
   with_items:
     - reset-keyboard-layout

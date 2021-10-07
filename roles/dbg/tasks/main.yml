@@ -3,7 +3,7 @@
   stow:
     state: present
     package: '{{ item }}'
-    dir: roles/dbg/files
+    dir: roles/dbg/stow
   with_items:
     - maven
     - mount-z-drive

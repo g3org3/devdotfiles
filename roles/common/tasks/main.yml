@@ -27,7 +27,7 @@
   stow:
     state: present
     package: '{{ item }}'
-    dir: roles/common/files 
+    dir: roles/common/stow
   with_items:
     - stow
     - tmux
