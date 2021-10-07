@@ -1,9 +1,6 @@
 [submodule "vim-config"]
 	path = roles/common/stow/vim
 	url = git@github.com:rodelrod/vim-config.git
-[submodule "keylayout"]
-	path = keylayout
-	url = git@github.com:rodelrod/keylayout
 [submodule "chemacs"]
 	path = chemacs
 	url = https://github.com/plexus/chemacs.git

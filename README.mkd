@@ -36,6 +36,11 @@ make sync
 After the first run the Jetbrains Toolbox desktop link will be registered.
 
 
+# Caveats
+
+- The keylayout setup script removes the comments from `evdev.xml`. This could be fixed by using lxml or injecting the comments.
+- Only works for Ubuntu and Pop!_OS right now
+
 # Old Installation
 ## Install dependencies
 

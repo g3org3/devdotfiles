@@ -3,6 +3,7 @@
   connection: local
   roles:
     - common
+    - keylayout
     - desktop
     - emacs
     - jetbrains
@@ -13,6 +14,7 @@
   connection: local
   roles:
     - common
+    - keylayout
     - desktop
     - emacs
     - jetbrains

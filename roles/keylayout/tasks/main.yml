@@ -1,0 +1,20 @@
+---
+- name: Stow keyboard layout definition files
+  become: true
+  stow:
+    state: present
+    package: keylayout
+    dir: roles/keylayout/stow
+    target: /usr/share/X11/xkb
+
+- name: Transfer scripts to install custom keyboard layouts
+  copy:
+    src: keylayout/
+    dest: /tmp/keylayout
+    mode: preserve
+
+- name: Install custom keyboard layouts
+  become: true
+  command:
+    chdir: /tmp/keylayout
+    cmd: /tmp/keylayout/setup
