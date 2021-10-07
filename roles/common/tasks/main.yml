@@ -44,3 +44,13 @@
   shell: vim -E -s -c "source ~/.vimrc" -c PluginInstall -c qa
   register: result
   failed_when: ( result.rc not in [0,1] )   # it returns a 1 even when successful
+
+
+- name: Install Tmux Plugin Manager
+  git:
+    repo: git@github.com:tmux-plugins/tpm.git
+    dest: ~/.tmux/plugins/tpm
+
+
+- name: Install Tmux Plugins
+  shell: tmux source ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins
