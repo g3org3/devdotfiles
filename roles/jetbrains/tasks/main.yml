@@ -16,3 +16,9 @@
     dest: /opt
     remote_src: yes
     creates: "/opt/{{ toolbox_basename }}"
+
+- name: Stow Idea configuration files
+  stow:
+    state: present
+    package: ideavim
+    dir: roles/jetbrains/stow

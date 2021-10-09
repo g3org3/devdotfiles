@@ -37,15 +37,6 @@
     - xmlstarlet
 
 
-- name: Stow configuration files
-  stow:
-    state: present
-    package: '{{ item }}'
-    dir: roles/desktop/stow
-  with_items:
-    - idea
-
-
 - name: Stow PopOS-specific files
   stow:
     state: present
