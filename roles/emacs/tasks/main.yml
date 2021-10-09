@@ -5,6 +5,18 @@
     dest: "{{ ansible_env.HOME }}/chemacs"
     update: yes
 
-
 - name: Install chemacs
   shell: "{{ ansible_env.HOME }}/chemacs/install.sh"
+
+- name: Stow Emacs/Org config files
+  stow:
+    state: present
+    package: org-protocol
+    dir: roles/emacs/stow
+
+- name: Register org-protocol URI handler
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.local/share/applications/mimeapps.list"
+    regexp: "^x-scheme-handler/org-protocol"
+    line: "x-scheme-handler/org-protocol=org-protocol.desktop"
+    create: yes
