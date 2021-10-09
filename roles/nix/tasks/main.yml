@@ -1,0 +1,14 @@
+---
+- name: Check if Nix is installed
+  command: nix-en --version
+  register: nix_env_output
+  failed_when: false
+  changed_when: false
+
+- name: Register fact of Nix presence
+  set_fact:
+    nix_present: "{{ nix_env_output.rc == 0 and nix_env_output.stdout is match('nix-env .*') }}"
+
+- name: Install nix
+  shell: curl -L https://nixos.org/nix/install | sh
+  when: not nix_present
