@@ -1,6 +1,3 @@
 [submodule "vim-config"]
 	path = roles/vim/stow/vim
 	url = git@github.com:rodelrod/vim-config.git
-[submodule "chemacs"]
-	path = chemacs
-	url = https://github.com/plexus/chemacs.git
