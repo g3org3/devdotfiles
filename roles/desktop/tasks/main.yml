@@ -36,6 +36,22 @@
     - xmlcopyeditor
     - xmlstarlet
 
+- name: Set Flatub as Flatpak remote
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    method: user      # Necessary in DBG machines and fine in personal machines
+
+- name: Install Flatpak applications
+  community.general.flatpak:
+    name: '{{ item }}'
+    state: present
+    method: user
+  with_items:
+    - com.getpostman.Postman
+    - com.github.tchx84.Flatseal
+    - io.dbeaver.DBeaverCommunity
 
 - name: Stow PopOS-specific files
   stow:

@@ -20,12 +20,16 @@ if ! command -v ansible-playbook &> /dev/null
 then
     if [[ $EUID != 0 ]]
     then
-        sudo apt update && sudo apt install \
+        sudo apt update && sudo apt -y install \
             ansible \
             python-apt
     else
-        apt update && apt install \
+        apt update && apt -y install \
             ansible \
             python-apt
     fi
 fi
+
+# Install dependencies
+#ansible-galaxy install -r requirements.yml    # not working with the system ansible in 20.04
+ansible-galaxy collection install community.general

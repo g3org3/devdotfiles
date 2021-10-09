@@ -1,6 +1,6 @@
 .PHONY: install sync check
 
-hosts: hosts.template
+hosts: hosts.template requirements.yml bin/bootstrap
 	bin/bootstrap
 
 install: hosts
