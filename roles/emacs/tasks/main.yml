@@ -11,8 +11,11 @@
 - name: Stow Emacs/Org config files
   stow:
     state: present
-    package: org-protocol
+    package: '{{ item }}'
     dir: roles/emacs/stow
+  with_items:
+    - org-protocol
+    - org-commit
 
 - name: Register org-protocol URI handler
   lineinfile:
@@ -20,3 +23,9 @@
     regexp: "^x-scheme-handler/org-protocol"
     line: "x-scheme-handler/org-protocol=org-protocol.desktop"
     create: yes
+
+- name: Add crontab for org-commit
+  cron:
+    name: "Auto-commit Org files"
+    minute: "*/20"
+    job: "$HOME/bin/org-git-add-commit"
