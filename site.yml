@@ -4,6 +4,7 @@
   roles:
     - common
     - keylayout
+    - vim
     - starship
     - desktop
     - emacs
@@ -16,6 +17,7 @@
   roles:
     - common
     - keylayout
+    - vim
     - starship
     - desktop
     - emacs

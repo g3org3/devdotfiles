@@ -1,0 +1,20 @@
+---
+- name: Install non-graphical Vim if not present
+  become: true
+  apt: name=vim state=latest
+
+- name: Stow Vim configuration files
+  stow:
+    state: present
+    package: vim
+    dir: roles/vim/stow
+
+- name: Install Vundle
+  git:
+    repo: git@github.com:VundleVim/Vundle.vim.git
+    dest: ~/.vim/bundle/Vundle.vim
+
+- name: Install Vim plugins
+  shell: vim -E -s -c "source ~/.vimrc" -c PluginInstall -c qa
+  register: result
+  failed_when: ( result.rc not in [0,1] )   # it returns a 1 even when successful
