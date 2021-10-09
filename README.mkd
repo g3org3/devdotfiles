@@ -12,21 +12,30 @@ Only the host that matches the local hostname are ran. This is the case because 
 
 Under each entry in the `roles` directory, you'll find standard sub-directories such as `files`, `tasks`, or `meta`. You'll also find the non-standard `stow` sub-directory, which contains files to be symlinked (usually from user's home). This allows us to edit the files in their normal placement in the file system while automatically updating the `~/.dotfiles` repo. These changes can then be committed.
 
-# Installation
+# Installation on a fresh system
 
-1. Clone the repo
+1. Setup ssh keys in Github/Gitlab
+
+```sh
+ssh-keygen
+cat ~/.ssh/id_rsa.pub
+```
+
+Add this ssh public key to Github/Gitlab
+
+2. Clone the repo
 
 ```sh
 git clone --recurse-submodules git@github.com:rodelrod/dotfiles.git ~/.dotfiles
 ```
 
-2. Make sure there's a playbook entry for the current hostname and add it if necessary
+3. Make sure there's a playbook entry for the current hostname and add it if necessary
 
 ```sh
 vim ~/.dotfiles/site.yml
 ```
 
-3. Install bootstrap dependencies and setup environment
+4. Install bootstrap dependencies and setup environment
 
 ```sh
 cd ~/.dotfiles
@@ -34,14 +43,14 @@ sudo ls    # just to make sure the sudo password is cached
 make install
 ```
 
-4. Run the Ansible playbook to synchronize changes
+5. Run the Ansible playbook to synchronize changes
 
 ```sh
 sudo ls    # just to make sure the sudo password is cached
 make sync
 ```
 
-5. Run Jetbrains Toolbox for the first time and install IntelliJ IDEA
+6. Run Jetbrains Toolbox for the first time and install IntelliJ IDEA
 
 ```sh
 /opt/jetbrains-toolbox-1.21.9712/jetbrains-toolbox
