@@ -1,3 +1,17 @@
+# Overview
+
+Set up a new linux machine from a clean install using Ansible and Stow.
+
+This abuses Ansible intended purpose by running a playbook locally. 
+
+It is run by cloning to `~/.dotfiles` (any other directory should work) then run scripts and ansible-playbooks using the provided Makefile.
+
+The exact roles being run can be configured per host using the hostname. The roles are associated to each host in the root playbook file `site.yml`. 
+
+Only the host that matches the local hostname are ran. This is the case because the inventory file `hosts` is generated during bootstrap, listing only the name of the current host. If you're configuring a new host you'll have to add a new entry to `site.yml`.
+
+Under each entry in the `roles` directory, you'll find standard sub-directories such as `files`, `tasks`, or `meta`. You'll also find the non-standard `stow` sub-directory, which contains files to be symlinked (usually from user's home). This allows us to edit the files in their normal placement in the file system while automatically updating the `~/.dotfiles` repo. These changes can then be committed.
+
 # Installation
 
 1. Clone the repo
