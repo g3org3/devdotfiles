@@ -1,4 +1,8 @@
 ---
+- name: Install Python for keyboard layout setup
+  become: true
+  apt: name=python state=latest
+
 - name: Stow keyboard layout definition files
   become: true
   stow:
