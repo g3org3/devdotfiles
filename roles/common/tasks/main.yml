@@ -39,6 +39,7 @@
     state: present
     package: '{{ item }}'
     dir: roles/common/stow
+    no-folding: yes
   with_items:
     - bashrc
 
