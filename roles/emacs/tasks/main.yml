@@ -13,6 +13,7 @@
     state: present
     package: '{{ item }}'
     dir: roles/emacs/stow
+    no-folding: yes
   with_items:
     - org-protocol
     - org-commit
