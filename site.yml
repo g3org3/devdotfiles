@@ -23,3 +23,15 @@
     - desktop
     - emacs
     - jetbrains
+
+- hosts: virgin-ubuntu
+  connection: local
+  roles:
+    - common
+    - keylayout
+    - vim
+    - starship
+    - desktop
+    - nix
+    - emacs
+    - jetbrains
