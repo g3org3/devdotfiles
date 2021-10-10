@@ -1,12 +1,22 @@
 ---
 - name: Git clone chemacs
   git:
-    repo: 'git@github.com:plexus/chemacs.git'
-    dest: "{{ ansible_env.HOME }}/chemacs"
+    repo: git@github.com:plexus/chemacs.git
+    dest: "{{ ansible_env.HOME }}/.chemacs"
     update: yes
 
 - name: Install chemacs
-  shell: "{{ ansible_env.HOME }}/chemacs/install.sh"
+  shell: "{{ ansible_env.HOME }}/.chemacs/install.sh"
+
+- name: Git clone Doom Emacs
+  git:
+    repo: git@github.com:hlissner/doom-emacs
+    dest: "{{ ansible_env.HOME }}/.emacs-profiles/doom-emacs"
+
+- name: Git clone Doom Emacs personal config
+  git:
+    repo: git@github.com:rodelrod/doom-emacs
+    dest: "{{ ansible_env.HOME }}/.doom.d"
 
 - name: Stow Emacs/Org config files
   stow:
@@ -15,8 +25,15 @@
     dir: roles/emacs/stow
     no-folding: yes
   with_items:
+    - emacs-profiles
     - org-protocol
     - org-commit
+
+- name: Clone Org notes
+  git:
+    repo: 'git@gitlab.com:rodelrod/org.git'
+    dest: "{{ ansible_env.HOME }}/Org"
+    accept_hostkey: yes
 
 - name: Register org-protocol URI handler
   lineinfile:

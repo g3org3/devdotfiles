@@ -147,7 +147,7 @@ export PATH="$PATH:./node_modules/.bin" # look for locally installed binaries
 
 
 # Easy access to Doom emacs cli tools
-export PATH="$PATH:$HOME/emacs-profiles/doom-emacs/bin"
+export PATH="$PATH:$HOME/.emacs-profiles/doom-emacs/bin"
 
 
 # Read machine-specific configuration
