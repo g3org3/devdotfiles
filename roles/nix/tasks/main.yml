@@ -12,11 +12,11 @@
 - name: Download Nix installation script
   get_url:
     url: https://nixos.org/nix/install
-    dest: "{{ ansible_env.HOME }}/Downloads/nix-install"
+    dest: "{{ ansible_env.HOME }}/.cache/dotfiles/nix-install"
   when: not nix_present
 
 - name: Install Nix in single-user mode
-  shell: cat {{ ansible_env.HOME }}/Downloads/nix-install | sh
+  shell: cat {{ ansible_env.HOME }}/.cache/dotfiles/nix-install | sh
   when: not nix_present
 
 - name: Stow Nix config
