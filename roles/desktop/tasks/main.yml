@@ -12,6 +12,7 @@
   become: true
   apt: name={{ item }} state=latest
   with_items:
+    - ca-certificates    # for flatpak install
     - flatpak
     - fonts-open-sans
     - fonts-powerline
