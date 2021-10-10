@@ -77,7 +77,18 @@ you open a new terminal).
 
 After the first run the Jetbrains Toolbox desktop link will be registered. Use the GUI to install IntelliJ IDEA.
 
-9. [DBG-only] Configure proxy and license in IntelliJ IDEA
+9. Pull current keyboard shortcuts, commit and check other machine configs for inspiration
+
+```sh
+cd ~/.dotfiles/keybindings
+./pull
+vim "media-keys/$(hostname).dconf
+```
+
+This is too personal machine-dependent to fully automate at this point. So
+these scripts just make it easy to track your changes in different machines.
+
+10. [DBG-only] Configure proxy and license in IntelliJ IDEA
 
     - Open IDEA; in the Welcome panel go to "Customize">"All Settings">"Appearance & Behavior">"HTTP Proxy"
         - Manual HTTP Proxy: webproxy.deutsche-boerse.de:8080

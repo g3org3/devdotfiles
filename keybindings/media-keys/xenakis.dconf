@@ -4,7 +4,7 @@ custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybin
 
 [custom-keybindings/custom0]
 binding='<Super>i'
-command='/home/rodelrod/.emacs-profiles/doom-emacs/bin/org-capture'
+command='/home/rodelrod/emacs-profiles/doom-emacs/bin/org-capture'
 name='Org Capture'
 
 [custom-keybindings/custom1]
