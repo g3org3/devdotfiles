@@ -7,7 +7,7 @@ export XMODIFIERS=
 
 # HACK: pass --user with empty string
 # Reason: In the Azure Ubuntu VDI Emacs would complain about not finding the
-#         home directory. This hack should not be a problem in other
-#         environments, but it's still a hack.
+#         home directory. The hostname for these machines usually conform to
+#         the pattern below.
 # Version: Citrix/Azure Ubuntu 20.04 VDI
-exec "${HOME}/.nix-profile/bin/emacs" --user "" "$@"
+[[ $(hostname) =~ ^pcazrlu.* ]] && exec "${HOME}/.nix-profile/bin/emacs" --user "" "$@"

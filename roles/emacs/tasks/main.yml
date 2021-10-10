@@ -26,6 +26,7 @@
     no-folding: yes
   with_items:
     - emacs-profiles
+    - emacs-launchers
     - org-protocol
     - org-commit
 
