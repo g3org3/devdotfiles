@@ -47,7 +47,7 @@
 - name: Install Tmux Plugin Manager
   git:
     repo: git@github.com:tmux-plugins/tpm.git
-    dest: ~/.tmux/plugins/tpm
+    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
 
 - name: Install Tmux Plugins
   shell: tmux source ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins
