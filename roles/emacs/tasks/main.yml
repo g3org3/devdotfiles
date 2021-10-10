@@ -1,22 +1,30 @@
 ---
-- name: Git clone chemacs
-  git:
-    repo: git@github.com:plexus/chemacs.git
-    dest: "{{ ansible_env.HOME }}/.chemacs"
-    update: yes
-
 - name: Install chemacs
-  shell: "{{ ansible_env.HOME }}/.chemacs/install.sh"
+  block:
+  - name: Git clone chemacs
+    git:
+      repo: git@github.com:plexus/chemacs.git
+      dest: "{{ ansible_env.HOME }}/.chemacs"
+      update: yes
+  - name: Run chemacs install script
+    shell: "{{ ansible_env.HOME }}/.chemacs/install.sh"
 
-- name: Git clone Doom Emacs
-  git:
-    repo: git@github.com:hlissner/doom-emacs
-    dest: "{{ ansible_env.HOME }}/.emacs-profiles/doom-emacs"
-
-- name: Git clone Doom Emacs personal config
-  git:
-    repo: git@github.com:rodelrod/doom-emacs
-    dest: "{{ ansible_env.HOME }}/.doom.d"
+- name: Install Doom Emacs
+  block:
+  - name: Git clone Doom Emacs
+    git:
+      repo: git@github.com:hlissner/doom-emacs
+      dest: "{{ ansible_env.HOME }}/.emacs-profiles/doom-emacs"
+  - name: Git clone Doom Emacs personal config
+    git:
+      repo: git@github.com:rodelrod/doom-emacs
+      dest: "{{ ansible_env.HOME }}/.doom.d"
+  - name: Stow Doom Emacs-related files
+    stow:
+      state: present
+      package: doom-emacs
+      dir: roles/emacs/stow
+      
 
 - name: Stow Emacs/Org config files
   stow:
@@ -25,7 +33,6 @@
     dir: roles/emacs/stow
     no-folding: yes
   with_items:
-    - emacs-profiles
     - emacs-launchers
     - org-protocol
     - org-commit

@@ -134,7 +134,6 @@ complete -F _complete_alias ta         # wrap alias to preserve completion
 alias dc="docker-compose"              # not worth wrapping, no completion in the original command
 alias dusage="du -h --max-depth=1"                            # One-level disk usage
 alias vimlight="vim --noplugin -c 'syntax off'"             # For gigantic files like SQL dumps
-alias magit='emacsclient -nw -e "(progn (magit-status) (delete-other-windows))"'
 alias tstamp='date +%Y%m%dT%H%M%S%Z'   # use this to timestamp file names
 function prettyjson() { cat "$1" | python -m json.tool; }
 
@@ -145,9 +144,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="$PATH:./node_modules/.bin" # look for locally installed binaries
 
-
-# Easy access to Doom emacs cli tools
-export PATH="$PATH:$HOME/.emacs-profiles/doom-emacs/bin"
 
 
 # Read machine-specific configuration
