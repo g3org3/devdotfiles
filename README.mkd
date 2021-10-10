@@ -54,7 +54,12 @@ sudo ls    # just to make sure the sudo password is cached
 make sync
 ```
 
-6. Run Jetbrains Toolbox for the first time and install IntelliJ IDEA
+6. Select the custom keyboard layout
+
+   - Settings > Region & Language > Input Sources > + > English (US) > English (US Int AltGr, Custom by Rod)
+   - This seems to require a restart
+
+7. Run Jetbrains Toolbox for the first time and install IntelliJ IDEA
 
 ```sh
 /opt/jetbrains-toolbox-1.21.9712/jetbrains-toolbox
@@ -62,7 +67,7 @@ make sync
 
 After the first run the Jetbrains Toolbox desktop link will be registered. Use the GUI to install IntelliJ IDEA.
 
-7. [DBG-only] Configure proxy and license in IntelliJ IDEA
+8. [DBG-only] Configure proxy and license in IntelliJ IDEA
 
     - Open IDEA; in the Welcome panel go to "Customize">"All Settings">"Appearance & Behavior">"HTTP Proxy"
         - Manual HTTP Proxy: webproxy.deutsche-boerse.de:8080
