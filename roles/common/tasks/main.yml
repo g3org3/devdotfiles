@@ -3,6 +3,7 @@
   become: true
   apt: name={{ item }} state=latest
   with_items:
+    - curl
     - direnv
     - docker.io
     - fzf
