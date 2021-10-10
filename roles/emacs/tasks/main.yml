@@ -35,6 +35,35 @@
     dest: "{{ ansible_env.HOME }}/Org"
     accept_hostkey: yes
 
+- name: Check if Adobe fonts are installed
+  check_mode: no
+  block:
+    - name: Check if Source Code Pro is installed
+      shell: fc-list | grep "SourceCodePro"
+      register: source_code_pro_search
+      failed_when: source_code_pro_search.rc == 2
+    - name: Check if Source Sans is installed
+      shell: fc-list | grep "SourceSans3"
+      register: source_sans_search
+      failed_when: source_sans_search.rc == 2
+    - name: Are both fonts installed?
+      set_fact:
+        adobe_fonts_installed: "{{ source_code_pro_search.rc == 0 and source_sans_search.rc == 0 }}"
+
+- name: Install Adobe fonts
+  when: not adobe_fonts_installed
+  block:
+    - name: Copy font files to user fonts directory
+      copy:
+        src: fonts/{{ item }}
+        dest: ~/.local/share/fonts/{{ item }}
+      with_items:
+        - source-code-pro
+        - source-sans
+    - name: Register new fonts
+      command: fc-cache -f
+
+
 - name: Register org-protocol URI handler
   lineinfile:
     path: "{{ ansible_env.HOME }}/.local/share/applications/mimeapps.list"
