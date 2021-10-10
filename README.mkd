@@ -23,16 +23,19 @@ cat ~/.ssh/id_rsa.pub
 
 Add this ssh public key to Github/Gitlab
 
-2. Clone the repo
+2. Install basic dependencies and clone the repo
 
 ```sh
+sudo apt install -y git make
 git clone --recurse-submodules git@github.com:rodelrod/dotfiles.git ~/.dotfiles
 ```
 
 3. Make sure there's a playbook entry for the current hostname and add it if necessary
 
 ```sh
-vim ~/.dotfiles/site.yml
+vi ~/.dotfiles/site.yml
+touch "$HOME/dotfiles/roles/common/stow/bashrc/.bashrc.hosts.d/$(hostname).bashrc"
+git commit -Am "Adding host $hostname"
 ```
 
 4. Install bootstrap dependencies and setup environment
@@ -41,6 +44,7 @@ vim ~/.dotfiles/site.yml
 cd ~/.dotfiles
 sudo ls    # just to make sure the sudo password is cached
 make install
+
 ```
 
 5. Run the Ansible playbook to synchronize changes
@@ -65,9 +69,6 @@ After the first run the Jetbrains Toolbox desktop link will be registered. Use t
         - No proxy for: *.deutsche-boerse.de
     - Open Help > Register
         - License server jetbrains.deutsche-boerse.de
-
-
-
 
 # Caveats
 
