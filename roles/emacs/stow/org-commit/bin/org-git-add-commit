@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd "$HOME/org" || exit 1
+cd "$HOME/Org" || exit 1
   
 # Make sure master branch is checked out
 if ! [[ $(git rev-parse --abbrev-ref HEAD) = "master" ]]
