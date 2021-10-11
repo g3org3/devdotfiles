@@ -14,7 +14,7 @@ Under each entry in the `roles` directory, you'll find standard sub-directories 
 
 # Installation on a fresh system
 
-1. Setup ssh keys in Github/Gitlab
+## 1. Setup ssh keys in Github/Gitlab
 
 ```sh
 ssh-keygen
@@ -23,14 +23,14 @@ cat ~/.ssh/id_rsa.pub
 
 Add this ssh public key to Github/Gitlab
 
-2. Install basic dependencies and clone the repo
+## 2. Install basic dependencies and clone the repo
 
 ```sh
 sudo apt install -y git make
 git clone --recurse-submodules git@github.com:rodelrod/dotfiles.git ~/.dotfiles
 ```
 
-3. Make sure there's a playbook entry for the current hostname and add it if necessary
+## 3. Make sure there's a playbook entry for the current hostname and add it if necessary
 
 ```sh
 vi ~/.dotfiles/site.yml
@@ -38,7 +38,7 @@ touch "$HOME/dotfiles/roles/common/stow/bashrc/.bashrc.hosts.d/$(hostname).bashr
 git commit -Am "Adding host $hostname"
 ```
 
-4. Install bootstrap dependencies and setup environment
+## 4. Install bootstrap dependencies and setup environment
 
 ```sh
 cd ~/.dotfiles
@@ -47,19 +47,19 @@ make install
 
 ```
 
-5. Run the Ansible playbook to synchronize changes
+## 5. Run the Ansible playbook to synchronize changes
 
 ```sh
 sudo ls    # just to make sure the sudo password is cached
 make sync
 ```
 
-6. Select the custom keyboard layout
+## 6. Select the custom keyboard layout
 
    - Settings > Region & Language > Input Sources > + > English (US) > English (US Int AltGr, Custom by Rod)
    - This seems to require a restart
 
-7. Install Doom Emacs
+## 7. Install Doom Emacs
 
 ```sh
 ~/.emacs-profiles/doom-emacs/bin/doom install
@@ -69,7 +69,7 @@ make sync
 (`doom` should be in the PATH by this point so you can also run it directly if
 you open a new terminal).
 
-8. Run Jetbrains Toolbox for the first time and install IntelliJ IDEA
+## 8. Run Jetbrains Toolbox for the first time and install IntelliJ IDEA
 
 ```sh
 /opt/jetbrains-toolbox-1.21.9712/jetbrains-toolbox
@@ -77,7 +77,7 @@ you open a new terminal).
 
 After the first run the Jetbrains Toolbox desktop link will be registered. Use the GUI to install IntelliJ IDEA.
 
-9. Pull current keyboard shortcuts, commit and check other machine configs for inspiration
+## 9. Pull current keyboard shortcuts, commit and check other machine configs for inspiration
 
 ```sh
 cd ~/.dotfiles/keybindings
@@ -88,12 +88,12 @@ vim "media-keys/$(hostname).dconf
 This is too personal machine-dependent to fully automate at this point. So
 these scripts just make it easy to track your changes in different machines.
 
-10. [DBG-only] Configure proxy and license in IntelliJ IDEA
+## 10. [DBG-only] Configure proxy and license in IntelliJ IDEA
 
-    - Open IDEA; in the Welcome panel go to "Customize">"All Settings">"Appearance & Behavior">"HTTP Proxy"
-        - Manual HTTP Proxy: webproxy.deutsche-boerse.de:8080
-        - No proxy for: *.deutsche-boerse.de
-    - Open Help > Register
+- Open IDEA; in the Welcome panel go to "Customize">"All Settings">"Appearance & Behavior">"HTTP Proxy"
+    - Manual HTTP Proxy: webproxy.deutsche-boerse.de:8080
+    - No proxy for: *.deutsche-boerse.de
+- Open Help > Register
         - License server jetbrains.deutsche-boerse.de
 
 # Caveats
@@ -101,26 +101,33 @@ these scripts just make it easy to track your changes in different machines.
 - The keylayout setup script removes the comments from `evdev.xml`. This could be fixed by using lxml or injecting the comments.
 - Only works for Ubuntu and Pop!_OS right now
 
-# Old Installation
-## Install dependencies
+# How-To's
 
-```bash
-_setup/{OS}/apt
-source _setup/{OS}/manual
-    
-# run the install functions in manual
+## Track Org files in git when using Dropbox
+
+Create a separate git root to keep it out of Dropbox:
+
+```sh
+mkdir ~/.gitroots
+git clone --separate-git-dir="/home/rodelrod/.gitroots/org.git" git@gitlab.com:rodelrod/org.git ~/Dropbox/Org
 ```
 
+## Check for changes in Gnome key bindings
 
-### After installing nix
-
-```bash
-_setup/{OS}/nix
-source _setup/{OS}/post_nix
-# run the install functions in post_nix
+```sh
+cd keybindings && ./pull && git diff
 ```
 
-## Get the submodules (tmux, bashrc, etc.)
+## Un-stowing packages
+
+Useful after moving packages to a different role due to a refactoring. 
+
+```sh
+cd roles/{ROLE}/stow
+stow -D -t ~ {PACKAGE}
+```
+
+## Get the submodules (vim or others)
 
 1. `git submodule init {PACKAGE}`
 2. `git submodule update --merge`
@@ -128,54 +135,3 @@ source _setup/{OS}/post_nix
 or maybe 
 
 3. `git submodule update --init --recursive
-
-## Use `GNU Stow` to create the necessary symlinks.
-
-```bash
-cd  ~/.dotfiles
-stow stow    # do this first!
-stow bashrc
-stow tmux
-tmux source-file ~/.tmux.conf          # registers systemd unit to launch tmux server on startup
-stow vim-config
-sudo stow -t /usr/share/X11/xkb keylayout
-cd keylayout && sudo ./setup && cd ..  # install layout in evdev.xml
-stow idea
-stow gitconfig
-stow nixnote
-cd nixnote && ./setup && cd ..         # register evernote handler in mimeapps.list
-stow org-protocol
-cd org-protocol && ./setup && cd ..    # register org-protocol handler in mimeapps.list
-stow pop-os
-
-# Specific fixes for PopOS 20.04
-sudo pop-os-systemd
-sudo systemctl enable wifi-resume.service
-stow google-meet
-
-# Specifix fixes for Marlene
-stow azure-ubuntu-vm
-```
-
-## Track Org files in git
-
-Create a separate git root to keep it out of Dropbox:
-
-
-```
-mkdir ~/.gitroots
-git clone --separate-git-dir="/home/rodelrod/.gitroots/org.git" git@gitlab.com:rodelrod/org.git ~/Dropbox/Org
-```
-
-Setup it up from the ~/.dotfiles directory with GNU stow:
-
-```
-stow org-commit
-cd org-commit && ./setup && cd ..      # add cron to commit org files every 15 minutes
-```
-
-## Check for changes in Gnome key bindings
-
-```
-cd keybindings && ./pull && git diff
-```
