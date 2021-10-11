@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # HACK: disable ibus in Emacs
 # Reason: xkb dead keys do not work with ibus in Emacs
