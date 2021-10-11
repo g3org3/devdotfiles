@@ -1,0 +1,15 @@
+---
+# Based on https://github.com/nvm-sh/nvm#git-install
+- name: Clone nvm repo
+  git:
+    repo: git@github.com:nvm-sh/nvm.git
+    dest: "{{ ansible_env.HOME }}/.nvm"
+    depth: 1
+    version: v0.39.0
+
+- name: Stow nvm config for bash
+  stow:
+    state: present
+    package: nvm
+    dir: roles/nvm/stow
+    no-folding: yes
