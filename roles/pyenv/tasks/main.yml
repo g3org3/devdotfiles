@@ -1,0 +1,14 @@
+---
+# Based on https://github.com/pyenv/pyenv#basic-github-checkout
+- name: Clone nvm repo
+  git:
+    repo: git@github.com:pyenv/pyenv.git
+    dest: "{{ ansible_env.HOME }}/.pyenv"
+    depth: 1
+
+- name: Stow pyenv config for bash
+  stow:
+    state: present
+    package: pyenv
+    dir: roles/pyenv/stow
+    no-folding: yes

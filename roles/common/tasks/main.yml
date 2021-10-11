@@ -49,6 +49,17 @@
   with_items:
     - bashrc
 
+- name: Make .profile read .profile.d
+  blockinfile:
+    path: ~/.profile
+    block: |
+      # Read extra configuration from ~/.profile.d
+      if [ -d "$HOME"/.profile.d ]; then
+        for file in "$HOME"/.profile.d/*.profile; do
+            [ -f "$file" ] && . "$file"
+        done
+      fi
+
 - name: Install Tmux Plugin Manager
   git:
     repo: git@github.com:tmux-plugins/tpm.git
