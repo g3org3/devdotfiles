@@ -1,0 +1,42 @@
+---
+- name: Check if Nix is installed
+  command: nix-env --version
+  register: nix_env_output
+  failed_when: false
+  changed_when: false
+
+- name: Register fact of Nix presence
+  set_fact:
+    nix_present: "{{ nix_env_output.rc == 0 and nix_env_output.stdout is match('nix-env .*') }}"
+
+- name: Install Nix
+  when: not nix_present
+  block:
+  - name: Download Nix installation script
+    get_url:
+      url: https://nixos.org/nix/install
+      dest: "{{ ansible_env.HOME }}/.cache/dotfiles/nix-install"
+  - name: Install Nix in single-user mode
+    shell: cat {{ ansible_env.HOME }}/.cache/dotfiles/nix-install | sh
+
+- name: Stow Nix config
+  stow:
+    state: present
+    package: nix
+    dir: roles/nix/stow
+
+- name: Apply Nix config
+  command: nix-env -iA nixpkgs.all
+
+- name: Workaround for Nix ctags clobbering the system's
+  file:
+    src: /usr/bin/ctags
+    dest: "{{ ansible_env.HOME }}/bin/ctags"
+    state: link
+
+- name: Register Nix applications on the desktop
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.profile"
+    regexp: "^export XDG_DATA_DIRS=.*nix-profile.*"
+    line: 'export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"'
+

@@ -1,0 +1,25 @@
+---
+- name: Set Jetbrains Toolbox basename
+  set_fact:
+    toolbox_basename: jetbrains-toolbox-1.21.9712
+
+- name: Download Jetbrains Toolbox tarball
+  get_url:
+    url: "https://download.jetbrains.com/toolbox/{{ toolbox_basename }}.tar.gz"
+    dest: "~/.cache/dotfiles/{{ toolbox_basename }}.tar.gz"
+    checksum: "sha1:f5e8e344acbe4746ffd5d7da9e2046792b2483eb"
+
+- name: Install Jetbrains Toolbox
+  become: true
+  unarchive:
+    # We must use ansible_env.HOME to get the correct user home when using become
+    src: "{{ ansible_env.HOME }}/.cache/dotfiles/{{ toolbox_basename }}.tar.gz"
+    dest: /opt
+    remote_src: yes
+    creates: "/opt/{{ toolbox_basename }}"
+
+- name: Stow Idea configuration files
+  stow:
+    state: present
+    package: ideavim
+    dir: roles/jetbrains/stow

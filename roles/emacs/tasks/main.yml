@@ -1,0 +1,86 @@
+---
+- name: Install chemacs
+  block:
+  - name: Git clone chemacs
+    git:
+      repo: git@github.com:plexus/chemacs.git
+      dest: "{{ ansible_env.HOME }}/.chemacs"
+      update: yes
+  - name: Run chemacs install script
+    shell: "{{ ansible_env.HOME }}/.chemacs/install.sh"
+
+- name: Install Doom Emacs
+  block:
+  - name: Git clone Doom Emacs
+    git:
+      repo: git@github.com:hlissner/doom-emacs
+      dest: "{{ ansible_env.HOME }}/.emacs-profiles/doom-emacs"
+  - name: Git clone Doom Emacs personal config
+    git:
+      repo: git@github.com:rodelrod/doom-emacs
+      dest: "{{ ansible_env.HOME }}/.doom.d"
+  - name: Stow Doom Emacs-related files
+    stow:
+      state: present
+      package: doom-emacs
+      dir: roles/emacs/stow
+      
+
+- name: Stow Emacs/Org config files
+  stow:
+    state: present
+    package: '{{ item }}'
+    dir: roles/emacs/stow
+    no-folding: yes
+  with_items:
+    - emacs-launchers
+    - org-protocol
+    - org-commit
+
+- name: Clone Org notes
+  git:
+    repo: 'git@gitlab.com:rodelrod/org.git'
+    dest: "{{ ansible_env.HOME }}/Org"
+    accept_hostkey: yes
+
+- name: Check if Adobe fonts are installed
+  check_mode: no
+  block:
+    - name: Check if Source Code Pro is installed
+      shell: fc-list | grep "SourceCodePro"
+      register: source_code_pro_search
+      failed_when: source_code_pro_search.rc == 2
+    - name: Check if Source Sans is installed
+      shell: fc-list | grep "SourceSans3"
+      register: source_sans_search
+      failed_when: source_sans_search.rc == 2
+    - name: Are both fonts installed?
+      set_fact:
+        adobe_fonts_installed: "{{ source_code_pro_search.rc == 0 and source_sans_search.rc == 0 }}"
+
+- name: Install Adobe fonts
+  when: not adobe_fonts_installed
+  block:
+    - name: Copy font files to user fonts directory
+      copy:
+        src: fonts/{{ item }}
+        dest: ~/.local/share/fonts/{{ item }}
+      with_items:
+        - source-code-pro
+        - source-sans
+    - name: Register new fonts
+      command: fc-cache -f
+
+
+- name: Register org-protocol URI handler
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.local/share/applications/mimeapps.list"
+    regexp: "^x-scheme-handler/org-protocol"
+    line: "x-scheme-handler/org-protocol=org-protocol.desktop"
+    create: yes
+
+- name: Add crontab for org-commit
+  cron:
+    name: "Auto-commit Org files"
+    minute: "*/20"
+    job: "$HOME/bin/org-git-add-commit"

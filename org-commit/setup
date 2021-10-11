@@ -1,7 +1,0 @@
-#!/bin/bash
-# Setup crontab to run org commit every 15 minutes
-# (based on https://stackoverflow.com/a/49886076/20989)
-new_job='*/15 * * * * $HOME/bin/org-git-add-commit'
-preceding_cron_jobs=$(crontab -l || echo "")
-preceding_cron_jobs=$(echo "$preceding_cron_jobs" | grep -v "org-git-add-commit" )
-(echo "$preceding_cron_jobs" ; echo "$new_job") | crontab -

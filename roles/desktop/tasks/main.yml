@@ -1,0 +1,64 @@
+---
+- name: Auto accept EULA for Microsoft fonts
+  become: true
+  debconf:
+    name: ttf-mscorefonts-installer
+    question: msttcorefonts/accepted-mscorefonts-eula
+    value: 'true'
+    vtype: select
+
+
+- name: Install graphical desktop libraries using APT
+  become: true
+  apt: name={{ item }} state=latest
+  with_items:
+    - ca-certificates    # for flatpak install
+    - flatpak
+    - fonts-open-sans
+    - fonts-powerline
+    - graphviz
+    - guake
+    - hexchat
+    - meld
+    - nautilus-admin
+    - pinta
+    - plantuml
+    - sqlitebrowser
+    - texlive
+    - texlive-plain-generic
+    - texlive-science
+    - dvipng
+    - texlive-latex-extra
+    - ttf-mscorefonts-installer
+    - vim-gtk3
+    - webp
+    - wireshark
+    - xclip
+    - xmlcopyeditor
+    - xmlstarlet
+
+- name: Set Flatub as Flatpak remote
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    method: user      # Necessary in DBG machines and fine in personal machines
+
+- name: Install Flatpak applications
+  community.general.flatpak:
+    name: '{{ item }}'
+    state: present
+    method: user
+  with_items:
+    - com.getpostman.Postman
+    - com.github.tchx84.Flatseal
+    - io.dbeaver.DBeaverCommunity
+
+- name: Stow PopOS-specific files
+  stow:
+    state: present
+    package: '{{ item }}'
+    dir: roles/desktop/stow
+  with_items:
+    - toggle-dark-theme
+  when: ansible_distribution == 'Pop!_OS'

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# HACK: disable ibus in Emacs
+# Reason: xkb dead keys do not work with ibus in Emacs
+# Versions: Emacs 27.1+ from nixpakgs
+export XMODIFIERS=
+
+# HACK: pass --user with empty string
+# Reason: In the Azure Ubuntu VDI Emacs would complain about not finding the
+#         home directory. The hostname for these machines usually conform to
+#         the pattern below.
+# Version: Citrix/Azure Ubuntu 20.04 VDI
+[[ $(hostname) =~ ^pcazrlu.* ]] && exec "${HOME}/.nix-profile/bin/emacs" --user "" "$@"

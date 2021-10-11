@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Go to root directory so that we can execute script from anywhere
+ROOT_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")/.."); pushd "$ROOT_DIR" > /dev/null || exit
+
+# Put current host name in ansible inventory file so that the correct config
+# is picked up in site.yml
+CURRENT_HOST=$(hostname)
+if [[ -z "$CURRENT_HOST" ]]
+then
+    echo "Something's off, this machine has no name! Aborting."
+    exit 1
+else
+    echo "Generating ansible inventory file (hosts) with current machine name"
+    sed "s/HOSTNAME/$(hostname)/" hosts.template > hosts
+fi
+
+# Install Ansible if not present
+if ! command -v ansible-playbook &> /dev/null
+then
+    if [[ $EUID != 0 ]]
+    then
+        sudo apt update && sudo apt -y install \
+            ansible \
+            python-apt
+    else
+        apt update && apt -y install \
+            ansible \
+            python-apt
+    fi
+fi
+
+# Install dependencies
+#ansible-galaxy install -r requirements.yml    # not working with the system ansible in 20.04
+ansible-galaxy collection install community.general

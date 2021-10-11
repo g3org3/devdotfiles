@@ -1,0 +1,37 @@
+---
+- hosts: pcazrlu01134
+  connection: local
+  roles:
+    - dbg      # must come first to set up proxy
+    - common
+    - keylayout
+    - vim
+    - starship
+    - desktop
+    - nix
+    - emacs
+    - jetbrains
+    - azure-ubuntu-vdi
+
+- hosts: xenakis
+  connection: local
+  roles:
+    - common
+    - keylayout
+    - vim
+    - starship
+    - desktop
+    - emacs
+    - jetbrains
+
+- hosts: virgin-ubuntu
+  connection: local
+  roles:
+    - common
+    - keylayout
+    - vim
+    - starship
+    - desktop
+    - nix
+    - emacs
+    - jetbrains
