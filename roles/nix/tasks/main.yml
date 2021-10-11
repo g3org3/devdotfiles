@@ -33,10 +33,3 @@
     src: /usr/bin/ctags
     dest: "{{ ansible_env.HOME }}/bin/ctags"
     state: link
-
-- name: Register Nix applications on the desktop
-  lineinfile:
-    path: "{{ ansible_env.HOME }}/.profile"
-    regexp: "^export XDG_DATA_DIRS=.*nix-profile.*"
-    line: 'export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"'
-
