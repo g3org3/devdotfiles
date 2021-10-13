@@ -30,6 +30,14 @@
     - universal-ctags
     - vim
 
+- name: Install pipx applications
+  command:
+    cmd: "pipx install {{ item }}"
+    creates: "~/.local/pipx/venvs/{{ item }}"
+  with_items:
+    - docker-compose
+    - poetry
+
 - name: Stow configuration files
   stow:
     state: present
@@ -59,6 +67,11 @@
             [ -f "$file" ] && . "$file"
         done
       fi
+
+- name: Install Poetry bash completions
+  shell:
+    cmd: "poetry completions bash > ~/.local/share/bash-completion/completions/poetry.bash-completion"
+    creates: "~/.local/share/bash-completion/completions/poetry.bash-completion"
 
 - name: Install Tmux Plugin Manager
   git:
