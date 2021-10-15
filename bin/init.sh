@@ -20,6 +20,7 @@ fi
 echo -e "\n## Appending env variables and aliases to  ~/.bashrc"
 echo "export http_proxy=http://webproxy.deutsche-boerse.de:8080 $DISCLAIMER" >> ~/.bashrc
 echo "export https_proxy=http://webproxy.deutsche-boerse.de:8080 $DISCLAIMER" >> ~/.bashrc
+echo "export no_proxy=*.deutsche-boerse.de $DISCLAIMER" >> ~/.bashrc
 echo "alias l=ls\\ -l $DISCLAIMER" >> ~/.bash_aliases
 echo "alias la=ls\\ -la $DISCLAIMER" >> ~/.bash_aliases
 echo "alias cddotfiles=cd\\ ~/.dotfiles $DISCLAIMER" >> ~/.bash_aliases
