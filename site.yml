@@ -11,7 +11,7 @@
 - hosts: pcazrlu01134
   connection: local
   roles:
-    - dbg # must come first to set up proxy
+    - dbg
     - common-rod
     - keylayout
     - vim
