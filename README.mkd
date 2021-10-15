@@ -2,11 +2,11 @@
 
 Set up a new linux machine from a clean install using Ansible and Stow.
 
-This abuses Ansible intended purpose by running a playbook locally. 
+This abuses Ansible intended purpose by running a playbook locally.
 
 It is run by cloning to `~/.dotfiles` (any other directory should work) then run scripts and ansible-playbooks using the provided Makefile.
 
-The exact roles being run can be configured per host using the hostname. The roles are associated to each host in the root playbook file `site.yml`. 
+The exact roles being run can be configured per host using the hostname. The roles are associated to each host in the root playbook file `site.yml`.
 
 Only the host that matches the local hostname are ran. This is the case because the inventory file `hosts` is generated during bootstrap, listing only the name of the current host. If you're configuring a new host you'll have to add a new entry to `site.yml`.
 
@@ -56,8 +56,8 @@ make sync
 
 ## 6. Select the custom keyboard layout
 
-   - Settings > Region & Language > Input Sources > + > English (US) > English (US Int AltGr, Custom by Rod)
-   - This seems to require a restart
+- Settings > Region & Language > Input Sources > + > English (US) > English (US Int AltGr, Custom by Rod)
+- This seems to require a restart
 
 ## 7. Install Doom Emacs
 
@@ -91,15 +91,14 @@ these scripts just make it easy to track your changes in different machines.
 ## 10. [DBG-only] Configure proxy and license in IntelliJ IDEA
 
 - Open IDEA; in the Welcome panel go to "Customize">"All Settings">"Appearance & Behavior">"HTTP Proxy"
-    - Manual HTTP Proxy: webproxy.deutsche-boerse.de:8080
-    - No proxy for: *.deutsche-boerse.de
-- Open Help > Register
-        - License server jetbrains.deutsche-boerse.de
+  - Manual HTTP Proxy: webproxy.deutsche-boerse.de:8080
+  - No proxy for: \*.deutsche-boerse.de
+- Open Help > Register - License server jetbrains.deutsche-boerse.de
 
 # Caveats
 
 - The keylayout setup script removes the comments from `evdev.xml`. This could be fixed by using lxml or injecting the comments.
-- Only works for Ubuntu and Pop!_OS right now
+- Only works for Ubuntu and Pop!\_OS right now
 
 # How-To's
 
@@ -120,7 +119,7 @@ cd keybindings && ./pull && git diff
 
 ## Un-stowing packages
 
-Useful after moving packages to a different role due to a refactoring. 
+Useful after moving packages to a different role due to a refactoring.
 
 ```sh
 cd roles/{ROLE}/stow
@@ -132,6 +131,6 @@ stow -D -t ~ {PACKAGE}
 1. `git submodule init {PACKAGE}`
 2. `git submodule update --merge`
 
-or maybe 
+or maybe
 
 3. `git submodule update --init --recursive

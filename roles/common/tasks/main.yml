@@ -41,7 +41,7 @@
 - name: Stow configuration files
   stow:
     state: present
-    package: '{{ item }}'
+    package: "{{ item }}"
     dir: roles/common/stow
   with_items:
     - stow
@@ -51,7 +51,7 @@
 - name: Stow configuration files with no folding
   stow:
     state: present
-    package: '{{ item }}'
+    package: "{{ item }}"
     dir: roles/common/stow
     no-folding: yes
   with_items:

@@ -2,7 +2,7 @@
 - hosts: pcazrlu01134
   connection: local
   roles:
-    - dbg      # must come first to set up proxy
+    - dbg # must come first to set up proxy
     - common
     - keylayout
     - vim
@@ -27,7 +27,6 @@
     - desktop
     - emacs
     - jetbrains
-
 
 - hosts: virgin-ubuntu
   connection: local

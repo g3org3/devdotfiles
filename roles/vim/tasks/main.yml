@@ -17,4 +17,4 @@
 - name: Install Vim plugins
   shell: vim -E -s -c "source ~/.vimrc" -c PluginInstall -c qa
   register: result
-  failed_when: ( result.rc not in [0,1] )   # it returns a 1 even when successful
+  failed_when: ( result.rc not in [0,1] ) # it returns a 1 even when successful
