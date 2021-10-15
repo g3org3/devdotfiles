@@ -4,47 +4,12 @@
     path: "{{ ansible_env.HOME }}/.cache/dotfiles"
     state: directory
 
-- name: Install core libraries using APT
-  become: true
-  apt: name={{ item }} state=latest
-  with_items:
-    - curl
-    - direnv
-    - docker.io
-    - fzf
-    - htop
-    - iftop
-    - pandoc
-    - pdftk
-    - postgresql-client-common
-    - python3-dev
-    - python3-venv
-    - pipx
-    - ripgrep
-    - shellcheck
-    - sqlite3
-    - stow
-    - tmux
-    - tree
-    - traceroute
-    - universal-ctags
-    - vim
-
-- name: Install pipx applications
-  command:
-    cmd: "pipx install {{ item }}"
-    creates: "~/.local/pipx/venvs/{{ item }}"
-  with_items:
-    - docker-compose
-    - poetry
-
 - name: Stow configuration files
   stow:
     state: present
     package: "{{ item }}"
     dir: roles/common/stow
   with_items:
-    - stow
     - gitconfig
     - tmux
 
@@ -56,22 +21,6 @@
     no-folding: yes
   with_items:
     - bashrc
-
-- name: Make .profile read .profile.d
-  blockinfile:
-    path: ~/.profile
-    block: |
-      # Read extra configuration from ~/.profile.d
-      if [ -d "$HOME"/.profile.d ]; then
-        for file in "$HOME"/.profile.d/*.profile; do
-            [ -f "$file" ] && . "$file"
-        done
-      fi
-
-- name: Install Poetry bash completions
-  shell:
-    cmd: "poetry completions bash > ~/.local/share/bash-completion/completions/poetry.bash-completion"
-    creates: "~/.local/share/bash-completion/completions/poetry.bash-completion"
 
 - name: Install Tmux Plugin Manager
   git:
