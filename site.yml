@@ -1,4 +1,13 @@
 ---
+- hosts: pcazrlu01000 # replace the last 3 zeros with your id
+  connection: local
+  roles:
+    - common
+    - nvm
+    - pyenv
+    - desktop
+    - jetbrains
+
 - hosts: pcazrlu01134
   connection: local
   roles:
