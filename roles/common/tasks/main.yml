@@ -76,3 +76,9 @@
   shell:
     cmd: "poetry completions bash > ~/.local/share/bash-completion/completions/poetry.bash-completion"
     creates: "~/.local/share/bash-completion/completions/poetry.bash-completion"
+
+- name: Ensure user is added to the docker group
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: true
