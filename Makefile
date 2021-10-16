@@ -2,6 +2,7 @@
 
 hosts: hosts.template bin/bootstrap
 	bin/bootstrap
+	sed -i s.pcazrlu01000.$$(hostname).g site.yml
 
 install: hosts
 
