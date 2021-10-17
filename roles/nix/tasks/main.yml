@@ -12,12 +12,12 @@
 - name: Install Nix
   when: not nix_present
   block:
-  - name: Download Nix installation script
-    get_url:
-      url: https://nixos.org/nix/install
-      dest: "{{ ansible_env.HOME }}/.cache/dotfiles/nix-install"
-  - name: Install Nix in single-user mode
-    shell: cat {{ ansible_env.HOME }}/.cache/dotfiles/nix-install | sh
+    - name: Download Nix installation script
+      get_url:
+        url: https://nixos.org/nix/install
+        dest: "{{ ansible_env.HOME }}/.cache/dotfiles/nix-install"
+    - name: Install Nix in single-user mode
+      shell: cat {{ ansible_env.HOME }}/.cache/dotfiles/nix-install | sh
 
 - name: Stow Nix config
   stow:
