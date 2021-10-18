@@ -72,6 +72,15 @@
           [[ -f "$file" ]] && source "$file"
       done
 
+- name: Stow configuration files with no folding
+  stow:
+    state: present
+    package: "{{ item }}"
+    dir: roles/common/stow
+    no-folding: yes
+  with_items:
+    - bashrc
+
 - name: Install Poetry bash completions
   shell:
     cmd: "poetry completions bash > ~/.local/share/bash-completion/completions/poetry.bash-completion"
