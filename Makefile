@@ -7,6 +7,7 @@ hosts: hosts.template bin/bootstrap
 install: hosts
 
 sync: install
+	sudo pwd
 	ansible-playbook site.yml
 
 check: install
