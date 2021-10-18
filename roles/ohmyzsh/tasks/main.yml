@@ -1,0 +1,28 @@
+---
+- name: install dependencies
+  become: "{{ ansible_distribution != 'MacOSX' }}"
+  package:
+    name:
+      - git
+      - zsh
+    state: present
+
+- name: clone oh-my-zsh for users
+  tags:
+    # Suppress warning: [ANSIBLE0006] git used in place of git module
+    # Git module doesn't allow us to set `core.autocrlf=input`.
+    - skip_ansible_lint
+  # core.autocrlf=input prevents https://github.com/robbyrussell/oh-my-zsh/issues/4402
+  command: 'git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh'
+  args:
+    chdir: '~{{ ansible_user }}'
+    creates: '~{{ ansible_user }}/.oh-my-zsh'
+  when: "((user.oh_my_zsh | default({})).install | default(oh_my_zsh_install)) | bool"
+
+- name: write .zshrc for users
+  template:
+    src: zshrc.j2
+    dest: '~{{ ansible_user }}/.zshrc'
+    backup: yes
+    mode: 'u=rw,go=r'
+  when: "((user.oh_my_zsh | default({})).install | default(oh_my_zsh_install)) | bool"
