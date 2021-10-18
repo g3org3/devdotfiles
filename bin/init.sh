@@ -54,17 +54,17 @@ fi
 ## Configure the git/ssh proxy for GITHUB
 if [[ "$STEP" = "4" ]] || [[ -z "$STEP" ]]; then
 echo -e "\n## [4] Configuring the proxy on your ssh to clone git repos"
-echo "host github.com $DISCLAIMER" >> ~/.ssh/config
-echo "	hostname ssh.github.com $DISCLAIMER" >> ~/.ssh/config
-echo "	user git $DISCLAIMER" >> ~/.ssh/config
-echo "	port 443 $DISCLAIMER" >> ~/.ssh/config
-echo "	proxycommand socat - PROXY:webproxy.deutsche-boerse.de:%h:%p,proxyport=8080 $DISCLAIMER" >> ~/.ssh/config
+echo "host github.com" >> ~/.ssh/config
+echo "	hostname ssh.github.com" >> ~/.ssh/config
+echo "	user git" >> ~/.ssh/config
+echo "	port 443" >> ~/.ssh/config
+echo "	proxycommand socat - PROXY:webproxy.deutsche-boerse.de:%h:%p,proxyport=8080" >> ~/.ssh/config
 ## Configure the git/ssh proxy for GITLAB
-echo "host gitlab.com $DISCLAIMER" >> ~/.ssh/config
-echo "	hostname altssh.gitlab.com $DISCLAIMER" >> ~/.ssh/config
-echo "	user git $DISCLAIMER" >> ~/.ssh/config
-echo "	port 443 $DISCLAIMER" >> ~/.ssh/config
-echo "	proxycommand socat - PROXY:webproxy.deutsche-boerse.de:%h:%p,proxyport=8080 $DISCLAIMER" >> ~/.ssh/config
+echo "host gitlab.com" >> ~/.ssh/config
+echo "	hostname altssh.gitlab.com" >> ~/.ssh/config
+echo "	user git" >> ~/.ssh/config
+echo "	port 443" >> ~/.ssh/config
+echo "	proxycommand socat - PROXY:webproxy.deutsche-boerse.de:%h:%p,proxyport=8080" >> ~/.ssh/config
 fi
 
 
