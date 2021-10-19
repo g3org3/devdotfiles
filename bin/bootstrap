@@ -6,6 +6,14 @@ ROOT_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")/.."); pushd "$ROOT_DIR" > /d
 # Put current host name in ansible inventory file so that the correct config
 # is picked up in site.yml
 CURRENT_HOST=$(hostname)
+
+SUBSTR_OF_HOST=${CURRENT_HOST:0:7}
+IS_DBG=
+
+if [[ "$SUBSTR_OF_HOST" = "pcazrlu" ]];
+	IS_DBG="YES"
+fi
+
 if [[ -z "$CURRENT_HOST" ]]
 then
     echo "Something's off, this machine has no name! Aborting."
@@ -33,3 +41,8 @@ fi
 # Install dependencies
 #ansible-galaxy install -r requirements.yml    # not working with the system ansible in 20.04
 ansible-galaxy collection install community.general
+
+if [[ "$IS_DBG" = "YES" ]]; then
+	sed -i s.azure_vdi_hostname.$(hostname).g site.yml
+fi
+
