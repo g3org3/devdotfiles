@@ -44,15 +44,12 @@ git commit -Am "Adding host $hostname"
 
 ```sh
 cd ~/.dotfiles
-sudo ls    # just to make sure the sudo password is cached
 make install
-
 ```
 
 ## 5. Run the Ansible playbook to synchronize changes
 
 ```sh
-sudo ls    # just to make sure the sudo password is cached
 make sync
 ```
 
