@@ -13,15 +13,6 @@
     - gitconfig
     - tmux
 
-- name: Stow configuration files with no folding
-  stow:
-    state: present
-    package: "{{ item }}"
-    dir: roles/common-rod/stow
-    no-folding: yes
-  with_items:
-    - bashrc
-
 - name: Install Tmux Plugin Manager
   git:
     repo: git@github.com:tmux-plugins/tpm.git
