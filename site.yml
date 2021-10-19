@@ -7,6 +7,8 @@
     - pyenv
     - desktop
     - jetbrains
+    - vscode
+    - ohmyzsh
 
 - hosts: pcazrlu01134
   connection: local
