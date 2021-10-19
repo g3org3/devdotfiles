@@ -4,6 +4,16 @@
     path: "{{ ansible_env.HOME }}/.cache/dotfiles"
     state: directory
 
+- name: Creates ~/.config directory
+  file:
+    path: "{{ ansible_env.HOME }}/.config"
+    state: directory
+
+- name: Creates ~/.local directory
+  file:
+    path: "{{ ansible_env.HOME }}/.local"
+    state: directory
+
 - name: Install core libraries using APT
   become: true
   apt: name={{ item }} state=latest
