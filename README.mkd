@@ -38,7 +38,7 @@ export https_proxy=http://webproxy.deutsche-boerse.de:8080
 
 ## 1. Run the init script.
 
-Open this link to get an authenticated url of the init script and copy it. [click me](https://github.com/rodelrod/dotfiles/raw/master/bin/bootstrap)
+Open this link to get an authenticated url of the init script and copy it. [click me](https://github.com/rodelrod/dotfiles/raw/master/bin/init.sh)
 
 
 ```sh
