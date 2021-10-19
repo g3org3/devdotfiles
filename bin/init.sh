@@ -66,11 +66,12 @@ fi
 if [[ "$STEP" = "1" ]] || [[ -z "$STEP" ]]; then
   SOCAT_PATH=$(which socat)
   MAKE_PATH=$(which make)
-  if [[ -z "$SOCAT_PATH" || -z "$MAKE_PATH" ]]; then
-    echo -e "\n## [1] Installing socat and make\n"
-    sudo apt install socat make -y
+  GIT_PATH=$(which git)
+  if [[ -z "$SOCAT_PATH" || -z "$MAKE_PATH" || -z "$GIT_PATH" ]]; then
+    echo -e "\n## [1] Installing socat, make and git\n"
+    sudo apt install socat make git -y
   else
-    echo -e "\n## [1] Installing socat and make [${YELLOW}skiped${NC}]"
+    echo -e "\n## [1] Installing socat, make and git [${YELLOW}skiped${NC}]"
   fi
 fi
 
