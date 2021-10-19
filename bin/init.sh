@@ -22,7 +22,7 @@ if [[ $IS_DBG = "YES" ]]; then
   ## Configure proxy in ~/.bashrc for curl and other commands
   GENERATED_LINES_FOUND=$(cat ~/.bashrc | grep init.sh | wc -l)
   if [[ "$GENERATED_LINES_FOUND" = "5" ]]; then
-    echo -e "\n## [0] Appending env variables and aliases to  ~/.bashrc [${YELLOW}skiped${NC}]"
+    echo -e "\n## [0] Appending env variables and aliases to  ~/.bashrc [${YELLOW}skipped${NC}]"
   else
     echo -e "\n## [0] Appending env variables and aliases to  ~/.bashrc"
     echo "export http_proxy=http://webproxy.deutsche-boerse.de:8080 $DISCLAIMER" >> ~/.bashrc
@@ -56,7 +56,7 @@ if [[ $IS_DBG = "YES" ]]; then
     echo "	port 443" >> ~/.ssh/config
     echo "	proxycommand socat - PROXY:webproxy.deutsche-boerse.de:%h:%p,proxyport=8080" >> ~/.ssh/config
   else
-    echo -e "\n## [0] Configuring the proxy on your ssh to clone git repos [${YELLOW}skiped${NC}]"
+    echo -e "\n## [0] Configuring the proxy on your ssh to clone git repos [${YELLOW}skipped${NC}]"
   fi
 fi
 #### END DBG-ONLY Section
@@ -71,7 +71,7 @@ if [[ "$STEP" = "1" ]] || [[ -z "$STEP" ]]; then
     echo -e "\n## [1] Installing socat, make and git\n"
     sudo apt install socat make git -y
   else
-    echo -e "\n## [1] Installing socat, make and git [${YELLOW}skiped${NC}]"
+    echo -e "\n## [1] Installing socat, make and git [${YELLOW}skipped${NC}]"
   fi
 fi
 
@@ -79,7 +79,7 @@ fi
 ## Create a new ssh key
 if [[ "$STEP" = "2" ]] || [[ -z "$STEP" ]]; then
   if [[ -f ~/.ssh/id_rsa.pub ]]; then
-    echo -e "\n## [2] Creating a new ssh key [${YELLOW}skiped${NC}]\n"
+    echo -e "\n## [2] Creating a new ssh key [${YELLOW}skipped${NC}]\n"
   else
     echo -e "\n## [2] Creating a new ssh key"
     ssh-keygen -t rsa
@@ -99,7 +99,7 @@ if [[ "$STEP" = "2.5" ]] || [[ -z "$STEP" ]]; then
     xdg-open https://github.com/settings/keys > /dev/null
     read -r -p "  ### press enter when you finish registering your key... "
   else
-    echo -e "\n  ## [2.5] Open github and register your new ssh key [${YELLOW}skiped${NC}]\n"
+    echo -e "\n  ## [2.5] Open github and register your new ssh key [${YELLOW}skipped${NC}]\n"
   fi
 fi
 
@@ -107,7 +107,7 @@ fi
 ## Git cloning the dotfiles repo
 if [[ "$STEP" = "3" ]] || [[ -z "$STEP" ]]; then
   if [[ -d ~/.dotfiles ]]; then
-    echo -e "\n## [3] Git cloning the dotfiles repo [${YELLOW}skiped${NC}]"
+    echo -e "\n## [3] Git cloning the dotfiles repo [${YELLOW}skipped${NC}]"
   else
     echo -e "\n## [3] Git cloning the dotfiles repo"
     git clone --depth=1 --recurse-submodules git@github.com:rodelrod/dotfiles.git ~/.dotfiles
@@ -122,7 +122,7 @@ if [[ "$STEP" = "4" || -z "$STEP" ]]; then
     echo -e "\n## [4] Creating an empty host bashrc in the git repo [roles/common/stow]"
     touch "$HOST_BASHRC_FILE_PATH"
   else 
-    echo -e "\n## [4] Creating an empty host bashrc in the git repo [roles/common/stow] [${YELLOW}skiped${NC}]"
+    echo -e "\n## [4] Creating an empty host bashrc in the git repo [roles/common/stow] [${YELLOW}skipped${NC}]"
   fi
 fi
 
