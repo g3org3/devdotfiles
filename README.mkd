@@ -36,8 +36,8 @@ The script with generate a ssh key for you, open github so you register the key 
 
 ```sh
 vi ~/.dotfiles/site.yml
-touch "$HOME/dotfiles/roles/common/stow/bashrc/.bashrc.hosts.d/$(hostname).bashrc"
-git commit -Am "Adding host $hostname"
+touch "$HOME/.dotfiles/roles/common/stow/bashrc/.bashrc.hosts.d/$(hostname).bashrc"
+git commit -Am "Adding host $(hostname)"
 ```
 
 ## 4. Install bootstrap dependencies and setup environment
