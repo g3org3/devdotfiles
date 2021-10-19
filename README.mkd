@@ -68,7 +68,7 @@ make install
 make sync
 ```
 
-## [Optional] 6. Select the custom keyboard layout
+## 6. [Optional] Select the custom keyboard layout
 
 - Settings > Region & Language > Input Sources > + > English (US) > English (US Int AltGr, Custom by Rod)
 - This seems to require a restart
