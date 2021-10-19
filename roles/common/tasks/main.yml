@@ -30,7 +30,6 @@
     - traceroute
     - universal-ctags
     - vim
-    - zsh
 
 - name: Install pipx applications
   command:
