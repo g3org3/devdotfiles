@@ -14,20 +14,35 @@ Under each entry in the `roles` directory, you'll find standard sub-directories 
 
 # Installation on a fresh system
 
-## 1. Setup ssh keys in Github/Gitlab
+## [DBG-only] 0. Before you start
 
-```sh
-ssh-keygen
-cat ~/.ssh/id_rsa.pub
+### Step 0.1
+- Click on the upper right menu.
+- Click on "Wired unmanaged" > "Wired Settings"
+- It will open a window. you will need to click on the "gear" icon for network proxy.
+- Click on automatic and write the following url 
+
+```
+http://webproxy.deutsche-boerse.de:8080
 ```
 
-Add this ssh public key to Github/Gitlab
+To check that it works by opening firefox and login to your [github](https://github.com) account.
 
-## 2. Install basic dependencies and clone the repo
+### Step 0.2
+
+Setup the proxy for curl copy paste this to the terminal.
 
 ```sh
-sudo apt install -y git make
-git clone --recurse-submodules git@github.com:rodelrod/dotfiles.git ~/.dotfiles
+export https_proxy=http://webproxy.deutsche-boerse.de:8080
+```
+
+## 1. Run the init script.
+
+Open this link to get an authenticated url of the init script and copy it. [click me](https://github.com/rodelrod/dotfiles/raw/master/bin/bootstrap)
+
+
+```sh
+curl <replace with the link here> | bash
 ```
 
 The script with generate a ssh key for you, open github so you register the key and clone this repo to continue the installation of the whole environment.
