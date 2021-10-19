@@ -1,5 +1,5 @@
 ---
-- hosts: azure_vdi_hostname # replace with your hostname
+- hosts: pcazrlu00000
   connection: local
   roles:
     - common
