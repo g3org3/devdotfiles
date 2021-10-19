@@ -14,52 +14,66 @@ Under each entry in the `roles` directory, you'll find standard sub-directories 
 
 # Installation on a fresh system
 
-## 1. Setup ssh keys in Github/Gitlab
+## [DBG-only] 0. Before you start
 
-```sh
-ssh-keygen
-cat ~/.ssh/id_rsa.pub
+### Step 0.1
+- Click on the upper right menu.
+- Click on "Wired unmanaged" > "Wired Settings"
+- It will open a window. you will need to click on the "gear" icon for network proxy.
+- Click on automatic and write the following url 
+
+```
+http://webproxy.deutsche-boerse.de:8080
 ```
 
-Add this ssh public key to Github/Gitlab
+To check that it works by opening firefox and login to your [github](https://github.com) account.
 
-## 2. Install basic dependencies and clone the repo
+### Step 0.2
+
+Setup the proxy for curl copy paste this to the terminal.
 
 ```sh
-sudo apt install -y git make
-git clone --recurse-submodules git@github.com:rodelrod/dotfiles.git ~/.dotfiles
+export https_proxy=http://webproxy.deutsche-boerse.de:8080
 ```
 
-## 3. Make sure there's a playbook entry for the current hostname and add it if necessary
+## 1. Run the init script.
+
+Open this link to get an authenticated url of the init script and copy it. [click me](https://github.com/rodelrod/dotfiles/raw/master/bin/init.sh)
+
+
+```sh
+curl <replace with the link here> | bash
+```
+
+The script with generate a ssh key for you, open github so you register the key and clone this repo to continue the installation of the whole environment.
+
+## 3. [Optional] Make sure there's a playbook entry for the current hostname and add it if necessary
 
 ```sh
 vi ~/.dotfiles/site.yml
-touch "$HOME/dotfiles/roles/common/stow/bashrc/.bashrc.hosts.d/$(hostname).bashrc"
-git commit -Am "Adding host $hostname"
+touch "$HOME/.dotfiles/roles/common/stow/bashrc/.bashrc.hosts.d/$(hostname).bashrc"
+git commit -Am "Adding host $(hostname)"
 ```
 
 ## 4. Install bootstrap dependencies and setup environment
 
 ```sh
 cd ~/.dotfiles
-sudo ls    # just to make sure the sudo password is cached
 make install
-
 ```
 
 ## 5. Run the Ansible playbook to synchronize changes
 
 ```sh
-sudo ls    # just to make sure the sudo password is cached
 make sync
 ```
 
-## 6. Select the custom keyboard layout
+## 6. [Optional] Select the custom keyboard layout
 
 - Settings > Region & Language > Input Sources > + > English (US) > English (US Int AltGr, Custom by Rod)
 - This seems to require a restart
 
-## 7. Install Doom Emacs
+## 7. [Optional] Install Doom Emacs
 
 ```sh
 ~/.emacs-profiles/doom-emacs/bin/doom install
@@ -77,7 +91,31 @@ you open a new terminal).
 
 After the first run the Jetbrains Toolbox desktop link will be registered. Use the GUI to install IntelliJ IDEA.
 
-## 9. Pull current keyboard shortcuts, commit and check other machine configs for inspiration
+
+## 9. [DBG-only] Configure proxy and license in IntelliJ IDEA
+
+- Open the toolbox and click on the "gear icon" > "proxy" > HTTP
+
+```
+Address: webproxy.deutsche-boerse.de
+Port: 8080  
+```
+
+- Click to install IDEA Ultimate
+
+- Click to open IDEA and register with license server**
+
+```
+jetbrains.deutsche-boerse.de
+```
+
+- **If you have problems try by disabling the proxy from the toolbox.
+
+- Once IDEA is registered in the Welcome panel go to "Customize">"All Settings">"Appearance & Behavior">"Sytem Settings">"HTTP Proxy"
+  - Manual HTTP Proxy: webproxy.deutsche-boerse.de:8080
+  - No proxy for: \*.deutsche-boerse.de
+
+## 10. [Optional] Pull current keyboard shortcuts, commit and check other machine configs for inspiration
 
 ```sh
 cd ~/.dotfiles/keybindings
@@ -87,13 +125,6 @@ vim "media-keys/$(hostname).dconf
 
 This is too personal machine-dependent to fully automate at this point. So
 these scripts just make it easy to track your changes in different machines.
-
-## 10. [DBG-only] Configure proxy and license in IntelliJ IDEA
-
-- Open IDEA; in the Welcome panel go to "Customize">"All Settings">"Appearance & Behavior">"HTTP Proxy"
-  - Manual HTTP Proxy: webproxy.deutsche-boerse.de:8080
-  - No proxy for: \*.deutsche-boerse.de
-- Open Help > Register - License server jetbrains.deutsche-boerse.de
 
 # Caveats
 

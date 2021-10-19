@@ -1,0 +1,31 @@
+---
+- name: Create cache directory for this Playbook
+  file:
+    path: "{{ ansible_env.HOME }}/.cache/dotfiles"
+    state: directory
+
+- name: Stow configuration files
+  stow:
+    state: present
+    package: "{{ item }}"
+    dir: roles/common-rod/stow
+  with_items:
+    - gitconfig
+    - tmux
+
+- name: Stow configuration files with no folding
+  stow:
+    state: present
+    package: "{{ item }}"
+    dir: roles/common-rod/stow
+    no-folding: yes
+  with_items:
+    - bashrc
+
+- name: Install Tmux Plugin Manager
+  git:
+    repo: git@github.com:tmux-plugins/tpm.git
+    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
+
+- name: Install Tmux Plugins
+  shell: tmux source ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins

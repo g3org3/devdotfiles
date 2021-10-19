@@ -16,3 +16,4 @@
     package: starship
     dir: roles/starship/stow
     state: present
+    no-folding: yes

@@ -4,6 +4,16 @@
     path: "{{ ansible_env.HOME }}/.cache/dotfiles"
     state: directory
 
+- name: Creates ~/.config directory
+  file:
+    path: "{{ ansible_env.HOME }}/.config"
+    state: directory
+
+- name: Creates ~/.local directory
+  file:
+    path: "{{ ansible_env.HOME }}/.local"
+    state: directory
+
 - name: Install core libraries using APT
   become: true
   apt: name={{ item }} state=latest
@@ -14,6 +24,7 @@
     - fzf
     - htop
     - iftop
+    - jq
     - pandoc
     - pdftk
     - postgresql-client-common
@@ -45,17 +56,6 @@
     dir: roles/common/stow
   with_items:
     - stow
-    - gitconfig
-    - tmux
-
-- name: Stow configuration files with no folding
-  stow:
-    state: present
-    package: "{{ item }}"
-    dir: roles/common/stow
-    no-folding: yes
-  with_items:
-    - bashrc
 
 - name: Make .profile read .profile.d
   blockinfile:
@@ -68,15 +68,35 @@
         done
       fi
 
+- name: Make .bashrc read .bashrc.d
+  blockinfile:
+    path: ~/.bashrc
+    block: |
+      # Read machine-specific configuration
+      source "$HOME"/.bashrc.hosts.d/$(hostname).bashrc
+
+      # Read extra configuration from ~/.bashrc.d
+      for file in "$HOME"/.bashrc.d/*.bashrc
+      do
+          [[ -f "$file" ]] && source "$file"
+      done
+
+- name: Stow configuration files with no folding
+  stow:
+    state: present
+    package: "{{ item }}"
+    dir: roles/common/stow
+    no-folding: yes
+  with_items:
+    - bashrc
+
 - name: Install Poetry bash completions
   shell:
     cmd: "poetry completions bash > ~/.local/share/bash-completion/completions/poetry.bash-completion"
     creates: "~/.local/share/bash-completion/completions/poetry.bash-completion"
 
-- name: Install Tmux Plugin Manager
-  git:
-    repo: git@github.com:tmux-plugins/tpm.git
-    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
-
-- name: Install Tmux Plugins
-  shell: tmux source ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins
+- name: Ensure user is added to the docker group
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: true

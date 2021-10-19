@@ -1,9 +1,22 @@
 ---
+- hosts: azure_vdi_hostname # replace with your hostname
+  connection: local
+  roles:
+    - common
+    - dbg
+    - nvm
+    - pyenv
+    - desktop
+    - jetbrains
+    - vscode
+    - ohmyzsh
+
 - hosts: pcazrlu01134
   connection: local
   roles:
-    - dbg # must come first to set up proxy
     - common
+    - dbg
+    - common-rod
     - keylayout
     - vim
     - nvm
