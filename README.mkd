@@ -91,7 +91,31 @@ you open a new terminal).
 
 After the first run the Jetbrains Toolbox desktop link will be registered. Use the GUI to install IntelliJ IDEA.
 
-## 9. [Optional] Pull current keyboard shortcuts, commit and check other machine configs for inspiration
+
+## 9. [DBG-only] Configure proxy and license in IntelliJ IDEA
+
+- Open the toolbox and click on the "gear icon" > "proxy" > HTTP
+
+```
+Address: webproxy.deutsche-boerse.de
+Port: 8080  
+```
+
+- Click to install IDEA Ultimate
+
+- Click to open IDEA and register with license server**
+
+```
+jetbrains.deutsche-boerse.de
+```
+
+- **If you have problems try by disabling the proxy from the toolbox.
+
+- Once IDEA is registered in the Welcome panel go to "Customize">"All Settings">"Appearance & Behavior">"Sytem Settings">"HTTP Proxy"
+  - Manual HTTP Proxy: webproxy.deutsche-boerse.de:8080
+  - No proxy for: \*.deutsche-boerse.de
+
+## 10. [Optional] Pull current keyboard shortcuts, commit and check other machine configs for inspiration
 
 ```sh
 cd ~/.dotfiles/keybindings
@@ -101,13 +125,6 @@ vim "media-keys/$(hostname).dconf
 
 This is too personal machine-dependent to fully automate at this point. So
 these scripts just make it easy to track your changes in different machines.
-
-## 10. [DBG-only] Configure proxy and license in IntelliJ IDEA
-
-- Open IDEA; in the Welcome panel go to "Customize">"All Settings">"Appearance & Behavior">"HTTP Proxy"
-  - Manual HTTP Proxy: webproxy.deutsche-boerse.de:8080
-  - No proxy for: \*.deutsche-boerse.de
-- Open Help > Register - License server jetbrains.deutsche-boerse.de
 
 # Caveats
 
