@@ -14,7 +14,7 @@ Under each entry in the `roles` directory, you'll find standard sub-directories 
 
 # Installation on a fresh system
 
-## [DBG-only] 0. Before you start
+## 0. [DBG-Only] Before you start
 
 ### Step 0.1
 - Click on the upper right menu.
