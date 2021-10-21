@@ -68,6 +68,18 @@
         done
       fi
 
+- name: Increase bash history size in memory
+  lineinfile:
+    path: ~/.bashrc
+    regexp: "^HISTSIZE="
+    line: "HISTSIZE=20000  # default 1000"
+
+- name: Increase bash history size in file
+  lineinfile:
+    path: ~/.bashrc
+    regexp: "^HISTFILESIZE="
+    line: "HISTFILESIZE=20000  # default 1000"
+
 - name: Make .bashrc read .bashrc.d
   blockinfile:
     path: ~/.bashrc
@@ -96,6 +108,7 @@
     creates: "~/.local/share/bash-completion/completions/poetry.bash-completion"
 
 - name: Ensure user is added to the docker group
+  become: true
   user:
     name: "{{ ansible_user }}"
     groups: docker

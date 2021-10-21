@@ -1,0 +1,6 @@
+---
+- name: Stow configuration files
+  stow:
+    state: present
+    package: bash-alias
+    dir: roles/bash-alias/stow
