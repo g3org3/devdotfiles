@@ -9,11 +9,11 @@ BLUE="\033[0;34m"
 YELLOW="\033[0;33m"
 NC="\033[0m"
 
-read -r -p "Is this machine \`$(hostname)\` a DBG machine? [y/N] " response
-response=${response,,} # tolower
-IS_DBG=false
-if [[ "$response" =~ ^(yes|y)$ ]]; then
-  IS_DBG=
+CURRENT_HOST=$(hostname)
+SUBSTR_OF_HOST=${CURRENT_HOST:0:7}
+IS_DBG=
+if [[ "$SUBSTR_OF_HOST" = "pcazrlu" ]]; then
+	IS_DBG="YES"
 fi
 
 
