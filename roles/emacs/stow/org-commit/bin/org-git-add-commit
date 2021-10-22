@@ -12,5 +12,5 @@ fi
 # Only run add/commit if there is anything to add
 if [[ $(git status --porcelain) ]]
 then
-    git add --all . && git commit -a -m "auto from org-git-add-commit"
+    git add --all . && git commit -a -m "auto from org-git-add-commit at host $(hostname)"
 fi
