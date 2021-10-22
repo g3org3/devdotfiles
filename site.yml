@@ -17,6 +17,7 @@
     - common
     - dbg
     - common-rod
+    - bash-alias
     - keylayout
     - vim
     - nvm
