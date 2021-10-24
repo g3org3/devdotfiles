@@ -10,4 +10,9 @@ export XMODIFIERS=
 #         home directory. The hostname for these machines usually conform to
 #         the pattern below.
 # Version: Citrix/Azure Ubuntu 20.04 VDI
-[[ $(hostname) =~ ^pcazrlu.* ]] && exec "${HOME}/.nix-profile/bin/emacs" --user "" "$@"
+if [[ $(hostname) =~ ^pcazrlu.* ]]
+then
+    exec "${HOME}/.nix-profile/bin/emacs" --user "" "$@"
+else
+    exec "${HOME}/.nix-profile/bin/emacs" "$@"
+fi
