@@ -33,12 +33,15 @@
   connection: local
   roles:
     - common
+    - common-rod
+    - bash-alias
     - keylayout
     - vim
     - nvm
     - pyenv
     - starship
     - desktop
+    - nix
     - emacs
     - jetbrains
 
