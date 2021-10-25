@@ -41,6 +41,7 @@
     repo: "git@gitlab.com:rodelrod/org.git"
     dest: "{{ ansible_env.HOME }}/Org"
     accept_hostkey: yes
+    update: no
 
 - name: Check if Adobe fonts are installed
   check_mode: no
