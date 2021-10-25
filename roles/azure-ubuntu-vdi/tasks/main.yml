@@ -6,3 +6,4 @@
     dir: roles/azure-ubuntu-vdi/stow
   with_items:
     - reset-keyboard-layout
+    - bashrc
