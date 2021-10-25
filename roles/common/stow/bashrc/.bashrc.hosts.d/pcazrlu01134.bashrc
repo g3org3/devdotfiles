@@ -1,6 +1,3 @@
-export ORG=~/org    # Org-mode home
-
-
 # DBG Proxy for the command line
 export http_proxy=http://webproxy.deutsche-boerse.de:8080
 export https_proxy=http://webproxy.deutsche-boerse.de:8080

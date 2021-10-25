@@ -1,6 +1,4 @@
 export DROPBOX=~/Dropbox
-export ORG=${DROPBOX}/Org    # Org-mode home
-
 
 # virtualenv
 export PROJECT_HOME=/home/rodelrod/code
