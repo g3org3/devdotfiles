@@ -16,10 +16,6 @@ source "$HOME/.cargo/env"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# direnv: must appear after rvm, git-prompt and other shell extensions that manipulate the prompt.
-eval "$(direnv hook bash)"
-
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/rodelrod/.sdkman"
 [[ -s "/home/rodelrod/.sdkman/bin/sdkman-init.sh" ]] && source "/home/rodelrod/.sdkman/bin/sdkman-init.sh"
