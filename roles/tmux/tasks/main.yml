@@ -1,17 +1,9 @@
 ---
-- name: Create cache directory for this Playbook
-  file:
-    path: "{{ ansible_env.HOME }}/.cache/dotfiles"
-    state: directory
-
-- name: Stow configuration files
+- name: Stow Tmux configuration files
   stow:
     state: present
-    package: "{{ item }}"
-    dir: roles/common-rod/stow
-  with_items:
-    - gitconfig
-    - tmux
+    package: tmux
+    dir: roles/tmux/stow
 
 - name: Install Tmux Plugin Manager
   git:

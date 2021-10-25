@@ -1,0 +1,6 @@
+---
+- name: Stow Git configuration files
+  stow:
+    state: present
+    package: gitconfig
+    dir: roles/gitconfig/stow
