@@ -6,9 +6,6 @@ export http_proxy=http://webproxy.deutsche-boerse.de:8080
 export https_proxy=http://webproxy.deutsche-boerse.de:8080
 export no_proxy=*.deutsche-boerse.de
 
-# Stop the constant LD_PRELOAD errors, hoping that this does not break Citrix
-export LD_PRELOAD=""
-
 # direnv: must appear after rvm, git-prompt and other shell extensions that manipulate the prompt.
 eval "$(direnv hook bash)"
 

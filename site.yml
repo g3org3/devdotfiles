@@ -4,6 +4,7 @@
   roles:
     - common
     - dbg
+    - azure-ubuntu-vdi
     - nvm
     - pyenv
     - desktop
@@ -16,6 +17,7 @@
   roles:
     - common
     - dbg
+    - azure-ubuntu-vdi
     - bash-alias
     - keylayout
     - vim
