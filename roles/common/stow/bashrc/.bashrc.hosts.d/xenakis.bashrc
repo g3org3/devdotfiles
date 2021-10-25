@@ -9,15 +9,8 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3  # points to system python even inside tmux
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
-
-# pyenv
-export PATH="/home/rodelrod/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-
-
 # search for snap executables
 export PATH="/snap/bin:$PATH"
-
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"

@@ -9,11 +9,6 @@ export no_proxy=*.deutsche-boerse.de
 # Stop the constant LD_PRELOAD errors, hoping that this does not break Citrix
 export LD_PRELOAD=""
 
-
-# pyenv
-export PATH="~/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-
 # direnv: must appear after rvm, git-prompt and other shell extensions that manipulate the prompt.
 eval "$(direnv hook bash)"
 
