@@ -12,8 +12,6 @@ export LD_PRELOAD=""
 # direnv: must appear after rvm, git-prompt and other shell extensions that manipulate the prompt.
 eval "$(direnv hook bash)"
 
-# added by pipx (https://github.com/pipxproject/pipx)
-export PATH="/home/OAAD/ht295/.local/bin:$PATH"
 
 # /usr/local/bin is not in PATH in Marlene, we need it for starship
 export PATH="$PATH:/usr/local/bin"
