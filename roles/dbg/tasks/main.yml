@@ -7,3 +7,10 @@
   with_items:
     - maven
     - mount-z-drive
+
+- name: Configure DBG proxy for snap
+  command: "{{ item }}"
+  with_items:
+    - 'snap set system proxy.http="http://webproxy.deutsche-boerse.de:8080"'
+    - 'snap set system proxy.https="http://webproxy.deutsche-boerse.de:8080"'
+  become: true

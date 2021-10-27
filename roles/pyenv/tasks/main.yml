@@ -1,6 +1,6 @@
 ---
 # Based on https://github.com/pyenv/pyenv#basic-github-checkout
-- name: Clone nvm repo
+- name: Clone pyenv repo
   git:
     repo: git@github.com:pyenv/pyenv.git
     dest: "{{ ansible_env.HOME }}/.pyenv"

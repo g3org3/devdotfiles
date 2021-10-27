@@ -4,6 +4,7 @@
   roles:
     - common
     - dbg
+    - azure-ubuntu-vdi
     - nvm
     - pyenv
     - desktop
@@ -16,10 +17,12 @@
   roles:
     - common
     - dbg
-    - common-rod
+    - azure-ubuntu-vdi
     - bash-alias
     - keylayout
     - vim
+    - gitconfig
+    - tmux
     - nvm
     - pyenv
     - starship
@@ -27,16 +30,17 @@
     - nix
     - emacs
     - jetbrains
-    - azure-ubuntu-vdi
+    - sdkman
 
 - hosts: xenakis
   connection: local
   roles:
     - common
-    - common-rod
     - bash-alias
     - keylayout
     - vim
+    - gitconfig
+    - tmux
     - nvm
     - pyenv
     - starship
@@ -44,6 +48,7 @@
     - nix
     - emacs
     - jetbrains
+    - sdkman
 
 - hosts: virgin-ubuntu
   connection: local

@@ -1,0 +1,19 @@
+---
+- name: Get sdkman install script
+  get_url:
+    url: https://get.sdkman.io
+    dest: /tmp/sdkman_install
+    mode: "0755"
+
+- name: Install sdkman
+  shell:
+    cmd: /tmp/sdkman_install
+    executable: /bin/bash
+    creates: ~/.sdkman/bin/sdkman-init.sh
+
+- name: Stow sdkman config
+  stow:
+    package: sdkman
+    dir: roles/sdkman/stow
+    state: present
+    no-folding: yes
