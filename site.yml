@@ -12,6 +12,19 @@
     - vscode
     - ohmyzsh
 
+- hosts: pcazrlu01159
+  connection: local
+  roles:
+    - common
+    - dbg
+    - azure-ubuntu-vdi
+    - nvm
+    - pyenv
+    - desktop
+    - jetbrains
+    - vscode
+    - ohmyzsh
+
 - hosts: pcazrlu01134
   connection: local
   roles:
