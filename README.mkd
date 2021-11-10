@@ -106,14 +106,16 @@ Port: 8080
 - Click to open IDEA and register with license server**
 
 ```
-jetbrains.deutsche-boerse.de
+https://jetbrains.deutsche-boerse.de
 ```
 
 - **If you have problems try by disabling the proxy from the toolbox.
 
 - Once IDEA is registered in the Welcome panel go to "Customize">"All Settings">"Appearance & Behavior">"Sytem Settings">"HTTP Proxy"
-  - Manual HTTP Proxy: webproxy.deutsche-boerse.de:8080
-  - No proxy for: \*.deutsche-boerse.de
+  - Manual HTTP Proxy:
+    - host: webproxy.deutsche-boerse.de
+    - port: 8080
+    - No proxy for: \*.deutsche-boerse.de
 
 ## 10. [Optional] Pull current keyboard shortcuts, commit and check other machine configs for inspiration
 
