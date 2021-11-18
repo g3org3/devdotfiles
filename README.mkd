@@ -117,7 +117,29 @@ https://jetbrains.deutsche-boerse.de
     - port: 8080
     - No proxy for: \*.deutsche-boerse.de
 
-## 10. [Optional] Pull current keyboard shortcuts, commit and check other machine configs for inspiration
+## 10. [DBG-only] Configure proxy in DBeaver
+
+- Open DBeaver
+- Click on `window` tab
+- Click on `Preferences`
+- Search for `proxy`
+- You should be seeing two options:
+  - Network Connections:
+    - Double click on HTTP in proxy entries
+      - host: webproxy.deutsche-bourse.de
+      - port: 8080
+    - Do the same for HTTPS
+      - host: webproxy.deutsche-bourse.de
+      - port: 8080
+  - Drivers:
+    - host: webproxy.deutsche-bourse.de
+    - port: 8080
+- Click on `Apply and close`
+- Close the application completely
+- Reopen DBeaver
+- You should now be able to connect to Microsoft SQL Server !
+
+## 11. [Optional] Pull current keyboard shortcuts, commit and check other machine configs for inspiration
 
 ```sh
 cd ~/.dotfiles/keybindings
